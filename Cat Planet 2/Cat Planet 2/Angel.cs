@@ -89,9 +89,9 @@ namespace Cat_Planet_2
 					if (this.hitBox.Top < w.hitBox.Bottom && this.hitBox.Bottom > w.hitBox.Top)
 					{
 						if (this.hitBox.Right <= w.hitBox.Left)
-							this.position.X = w.hitBox.X - 56;
+							this.position.X = w.hitBox.X - 57;
 						else
-							this.position.X = w.hitBox.Right - 8;
+							this.position.X = w.hitBox.Right - 7;
 						motion.X *= -1;
 						motion.X -= motion.X / 3F;
 						if (Math.Abs(motion.X) > 1)

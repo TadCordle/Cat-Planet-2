@@ -33,9 +33,9 @@ namespace Cat_Planet_2
 			position += motion;
 		}
 
-		public void Draw(SpriteBatch sb)
+		public void Draw(SpriteBatch sb, Color c)
 		{
-			sb.Draw(texture, position, Color.White);
+			sb.Draw(texture, position, c);
 		}
 	}
 }

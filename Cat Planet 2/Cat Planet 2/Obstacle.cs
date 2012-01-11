@@ -11,10 +11,12 @@ namespace Cat_Planet_2
 	abstract class Obstacle
 	{
 		public Rectangle hitBox;
+		public bool isDeadly;
 
 		public Obstacle(Rectangle hitBox)
 		{
 			this.hitBox = hitBox;
+			this.isDeadly = true;
 		}
 
 		public abstract void Update();

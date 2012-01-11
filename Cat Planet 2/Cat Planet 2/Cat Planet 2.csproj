@@ -110,13 +110,15 @@
     <Compile Include="Angel.cs" />
     <Compile Include="AnimatedTexture.cs" />
     <Compile Include="Cat.cs" />
+    <Compile Include="Explosion.cs" />
     <Compile Include="ExplosionParticle.cs" />
+    <Compile Include="Gem.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="Obstacle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="DeathWall.cs" />
     <Compile Include="Wall.cs" />
   </ItemGroup>

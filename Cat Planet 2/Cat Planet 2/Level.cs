@@ -15,13 +15,13 @@ namespace Cat_Planet_2
 		public Type type;
 		public List<Wall> walls;
 		public List<Cat> cats;
+		public Gem gem;
 		public List<Link> links;
 		public List<Obstacle> obstacles;
 		public Dictionary<Vector2, Vector2> restartPosition;
-		public Vector2[] levelFrom;
 		Texture2D back, fore;
 
-		public Level(Vector2 coordinates, Type type, Texture2D back, Texture2D fore, Cat[] cArray, Dictionary<string, Texture2D[]> obTextures)
+		public Level(StreamReader sr, Vector2 coordinates, Type type, Texture2D back, Texture2D fore, Cat[] cArray, Gem[] gArray, Dictionary<string, Texture2D[]> obTextures)
 		{
 			this.coordinates = coordinates;
 			string coordString = ((int)coordinates.X).ToString() + " " + ((int)(coordinates.Y)).ToString();
@@ -30,7 +30,6 @@ namespace Cat_Planet_2
 			links = new List<Link>();
 			obstacles = new List<Obstacle>();
 
-			StreamReader sr = new StreamReader("Content/levels.txt");
 			string line = "";
 			while (line != coordString)
 				line = sr.ReadLine();
@@ -43,6 +42,7 @@ namespace Cat_Planet_2
 			 * restart [#ofpositions lfromx lfromy x y lfromx lfromy x y... etc]
 			 * wall [x y width heigh]
 			 * cat [x y index]
+			 * gem [posx posy index]
 			 * link [posx posy width height leveltox leveltoy flipx flipy]
 			 * deathwall [posx posy width height]
 			 * !				Denotes end of board
@@ -67,6 +67,11 @@ namespace Cat_Planet_2
 						cArray[int.Parse(splitLine[3])].UpdateHitBox();
 						this.cats.Add(cArray[int.Parse(splitLine[3])]);
 					}
+					else if (splitLine[0] == "gem")
+					{
+						gArray[int.Parse(splitLine[3])].position = new Vector2(int.Parse(splitLine[1]), int.Parse(splitLine[2]));
+						gem = gArray[int.Parse(splitLine[3])];
+					}
 					else if (splitLine[0] == "link")
 					{
 						links.Add(new Link(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4])),
@@ -81,7 +86,6 @@ namespace Cat_Planet_2
 				}
 				line = sr.ReadLine();
 			}
-			sr.Close();
 			this.back = back;
 			this.fore = fore;
 			this.type = type;
