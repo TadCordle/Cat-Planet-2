@@ -21,8 +21,7 @@ namespace Cat_Planet_2
 		public Vector2 position, motion;
 		const float maxHSpeed = 7.2F, hAcceleration = 0.3F;
 		bool highJump, lowJump;
-		bool keyPulse;
-		int keyCount;
+		int keyCount, previous;
 
 		public Rectangle hitBox;
 
@@ -36,11 +35,12 @@ namespace Cat_Planet_2
 			this.position = position;
 			this.motion = Vector2.Zero;
 			this.highJump = this.lowJump = false;
-			this.keyPulse = false;
-			this.keyCount = 0;
-
+			
 			this.hitWall = hitWall;
 			this.swish = swish;
+
+			keyCount = 0;
+			previous = 0;
 
 			hitBox = new Rectangle((int)position.X + 8, (int)position.Y, 48, 48);
 		}
@@ -142,25 +142,34 @@ namespace Cat_Planet_2
 			#endregion
 
 			#region Check For Jumping
-			if (keys.GetPressedKeys().Count() - keysPressed != keyCount)
-				keyPulse = true;
 
-			if (keys.GetPressedKeys().Count() > keysPressed && keyPulse)
+			if (keys.GetPressedKeys().Count() > keysPressed)
 			{
+				previous = keyCount;
 				keyCount = keys.GetPressedKeys().Count() - keysPressed;
-				keyPulse = false;
-				isNormal = false;
-				swish.Play(0.7F, 0.0F, 0.0F);
-				if (highJump && !lowJump)
-					motion.Y = -10F;
-				else if (lowJump && !highJump)
-					motion.Y = -3F;
-				else
-					motion.Y = -5.5F;
-				return 1;
+				if (keyCount > previous)
+				{
+					Jump();
+					return 1;
+				}
 			}
+			else
+				keyCount = 0;
+
 			return 0;
 			#endregion
+		}
+
+		private void Jump()
+		{
+			isNormal = false;
+			swish.Play(0.7F, 0.0F, 0.0F);
+			if (highJump && !lowJump)
+				motion.Y = -10F;
+			else if (lowJump && !highJump)
+				motion.Y = -3F;
+			else
+				motion.Y = -5.5F;
 		}
 		
 		public void UpdateHitBox()

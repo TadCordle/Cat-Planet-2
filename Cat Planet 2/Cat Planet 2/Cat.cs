@@ -31,7 +31,7 @@ namespace Cat_Planet_2
 			this.hitTexture = hitTexture;
 			this.font = font;
 			hit = false;
-			hitBox = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+			hitBox = new Rectangle((int)position.X, (int)position.Y, 64, 64);
 			ProcessText();
 		}
 
@@ -70,8 +70,8 @@ namespace Cat_Planet_2
 		}
 		public void UpdateHitBox()
 		{
-			hitBox.X = (int)position.X;
-			hitBox.Y = (int)position.Y;
+			hitBox.X = (int)position.X - 16;
+			hitBox.Y = (int)position.Y - 16;
 		}
 
 		public void Draw(SpriteBatch sb)

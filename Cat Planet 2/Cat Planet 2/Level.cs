@@ -18,7 +18,11 @@ namespace Cat_Planet_2
 		public Gem gem;
 		public List<Link> links;
 		public List<Obstacle> obstacles;
+		public List<ElectricFence> fences;
+		public List<Button> buttons;
+		public List<Timer> timers;
 		public Dictionary<Vector2, Vector2> restartPosition;
+		public Dictionary<string, Color> colors;
 		Texture2D back, fore;
 
 		public Level(StreamReader sr, Vector2 coordinates, Type type, Texture2D back, Texture2D fore, Cat[] cArray, Gem[] gArray, Dictionary<string, Texture2D[]> obTextures)
@@ -29,6 +33,16 @@ namespace Cat_Planet_2
 			cats = new List<Cat>();
 			links = new List<Link>();
 			obstacles = new List<Obstacle>();
+			fences = new List<ElectricFence>();
+			buttons = new List<Button>();
+			timers = new List<Timer>();
+			colors = new Dictionary<string, Color>();
+			colors.Add("red", Color.Red);
+			colors.Add("orange", Color.Orange);
+			colors.Add("yellow", Color.Yellow);
+			colors.Add("lime", Color.Lime);
+			colors.Add("cyan", Color.Cyan);
+			colors.Add("purple", Color.Purple);
 
 			string line = "";
 			while (line != coordString)
@@ -40,11 +54,15 @@ namespace Cat_Planet_2
 			 * Format of text file:
 			 * # #				Specifies the coordinates of the board in the world
 			 * restart [#ofpositions lfromx lfromy x y lfromx lfromy x y... etc]
-			 * wall [x y width heigh]
-			 * cat [x y index]
+			 * wall [posx posy width heigh]
+			 * cat [posx posy index]
 			 * gem [posx posy index]
-			 * link [posx posy width height leveltox leveltoy flipx flipy]
+			 * link [posx posy width height leveltox leveltoy flipx? flipy?]
 			 * deathwall [posx posy width height]
+			 * rock [posx posy speedx speedy]
+			 * fence [posx posy width height color index]
+			 * button [posx posy color index]
+			 * timer [posx posy index time loop?] 
 			 * !				Denotes end of board
 			 **************************************************************************************************/
 
@@ -83,6 +101,22 @@ namespace Cat_Planet_2
 					{
 						obstacles.Add(new DeathWall(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4]))));
 					}
+					else if (splitLine[0] == "fence")
+					{
+						fences.Insert(int.Parse(splitLine[6]), new ElectricFence(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4])), obTextures["fence"][0], colors[splitLine[5]], int.Parse(splitLine[6])));
+					}
+					else if (splitLine[0] == "rock")
+					{
+						obstacles.Add(new FallingRock(obTextures["rock"][0], new Vector2(int.Parse(splitLine[1]), int.Parse(splitLine[2])), new Vector2(int.Parse(splitLine[3]), int.Parse(splitLine[4])), new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 64, 64)));
+					}
+					else if (splitLine[0] == "button")
+					{
+						buttons.Insert(int.Parse(splitLine[4]), new Button(obTextures["button"][0], new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 32, 32), colors[splitLine[3]], int.Parse(splitLine[4])));
+					}
+					else if (splitLine[0] == "timer")
+					{
+						timers.Insert(int.Parse(splitLine[3]), new Timer(obTextures["timefront"][0], obTextures["timeback"][0], new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 48, 48), int.Parse(splitLine[3]), int.Parse(splitLine[4]), int.Parse(splitLine[5]) == 1));
+					}
 				}
 				line = sr.ReadLine();
 			}
@@ -107,10 +141,11 @@ namespace Cat_Planet_2
 			Canyons,
 			Caves,
 			WarZone,
-			FrozenWasteland,
+			Labs,
 			Underwater,
 			UnderwaterTransition,
-			FaultLine,
+			Final,
+			EasterEgg
 		}
 	}
 }

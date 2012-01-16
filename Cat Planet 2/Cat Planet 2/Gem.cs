@@ -15,13 +15,13 @@ namespace Cat_Planet_2
 		public bool taken;
 
 		Texture2D texture;
-		Color c;
+		public Color color;
 
 		public Gem(Vector2 position, Texture2D texture, Color c)
 		{
 			this.position = position;
 			this.texture = texture;
-			this.c = c;
+			this.color = c;
 
 			hitBox = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
 			taken = false;
@@ -44,7 +44,7 @@ namespace Cat_Planet_2
 		public void Draw(SpriteBatch sb)
 		{
 			if (!taken)
-				sb.Draw(texture, hitBox, c);
+				sb.Draw(texture, hitBox, color);
 		}
 	}
 }
