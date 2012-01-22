@@ -5,7 +5,9 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
+#if XBOX
+using Microsoft.Xna.Framework.GamerServices; 
+#endif
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -43,6 +45,10 @@ namespace Cat_Planet_2
 		SoundEffect meow;
 		SoundEffect explode;
 		SoundEffect getGem;
+		SoundEffect hitButton;
+		SoundEffect ticking;
+		SoundEffectInstance loopTick;
+		SoundEffect rocketLaunch;
 
 		// Music
 		Song currentSong;
@@ -106,7 +112,7 @@ namespace Cat_Planet_2
 			goTime = true;
 
 			videoPlayer = new VideoPlayer();
-
+			
 			base.Initialize();
 		}
 
@@ -115,13 +121,14 @@ namespace Cat_Planet_2
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			font = Content.Load<SpriteFont>("font");
 
-			// Load sprites
+			#region Load angel
 			angelNormalTexture[0] = Content.Load<Texture2D>("angel/angel normal 1");
 			angelNormalTexture[1] = Content.Load<Texture2D>("angel/angel normal 2");
 			angelFlyTexture[0] = Content.Load<Texture2D>("angel/angel fly 1");
 			angelFlyTexture[1] = Content.Load<Texture2D>("angel/angel fly 2");
 			angelFlyTexture[2] = Content.Load<Texture2D>("angel/angel fly 3");
-
+			#endregion
+			#region Load cat
 			catNormalTexture[0] = catNormalTexture[6] = Content.Load<Texture2D>("cat/cat normal 1");
 			catNormalTexture[1] = catNormalTexture[5] = Content.Load<Texture2D>("cat/cat normal 2");
 			catNormalTexture[2] = catNormalTexture[4] = Content.Load<Texture2D>("cat/cat normal 3");
@@ -131,7 +138,8 @@ namespace Cat_Planet_2
 			catHitTexture[2] = Content.Load<Texture2D>("cat/cat hit 3");
 			catHitTexture[5] = catHitTexture[7] = Content.Load<Texture2D>("cat/cat hit 4");
 			catHitTexture[6] = Content.Load<Texture2D>("cat/cat hit 5");
-
+			#endregion
+			#region Load objects
 			gemTexture = Content.Load<Texture2D>("objects/gem");
 			pixel = Content.Load<Texture2D>("pixel");
 			explosionTexture = Content.Load<Texture2D>("objects/explosion particle");
@@ -151,8 +159,19 @@ namespace Cat_Planet_2
 			Texture2D[] timeBackTexture = new Texture2D[1];
 			timeBackTexture[0] = Content.Load<Texture2D>("objects/timer back");
 			obTextures.Add("timeback", timeBackTexture);
-
-			// Load backgrounds
+			Texture2D[] plasmaTexture = new Texture2D[3];
+			plasmaTexture[0] = Content.Load<Texture2D>("objects/plasma ball 1");
+			plasmaTexture[1] = Content.Load<Texture2D>("objects/plasma ball 2");
+			plasmaTexture[2] = Content.Load<Texture2D>("objects/plasma ball 3");
+			obTextures.Add("plasma", plasmaTexture);
+			Texture2D[] rocketTexture = new Texture2D[1];
+			rocketTexture[0] = Content.Load<Texture2D>("objects/rocket");
+			obTextures.Add("rocket", rocketTexture);
+			Texture2D[] launcherTexture = new Texture2D[1];
+			launcherTexture[0] = Content.Load<Texture2D>("objects/launcher");
+			obTextures.Add("launcher", launcherTexture);
+			#endregion
+			#region Load backgrounds
 			backgrounds[0] = Content.Load<Texture2D>("backdrops/canyons");
 			backgrounds[1] = Content.Load<Texture2D>("backdrops/caves");
 			backgrounds[2] = Content.Load<Texture2D>("backdrops/warzone");
@@ -160,19 +179,35 @@ namespace Cat_Planet_2
 			backgrounds[4] = Content.Load<Texture2D>("backdrops/underwater");
 			backgrounds[5] = Content.Load<Texture2D>("backdrops/underwater transition");
 			//backgrounds[6] = Content.Load<Texture2D>("backdrops/final");
-
+			#endregion
+			#region Load music
 			// Load sounds and music
 			canyonSong = Content.Load<Song>("canyonmus");
 			caveSong = Content.Load<Song>("cavemus");
+			labSong = Content.Load<Song>("labmus");
+			//warSong = Content.Load<Song>("warmus");
+			//waterSong = Content.Load<Song>("watermus");
+			//finalSong = Content.Load<Song>("finalmus");
+			#endregion
+			#region Load sounds
 			hitWall = Content.Load<SoundEffect>("thump");
 			flap = Content.Load<SoundEffect>("whoosh");
 			meow = Content.Load<SoundEffect>("meow");
-
+			//explode = Content.Load<SoundEffect>("explode");
+			//getGem = Content.Load<SoundEffect>("getgem");
+			//hitButton = Content.Load<SoundEffect>("hitbutton");
+			//ticking = Content.Load<SoundEffect>("tick");
+			//loopTick = ticking.CreateInstance();
+			//loopTick.IsLooped = true;
+			//rocketLaunch = Content.Load<SoundEffect>("rocketlaunch");
+			#endregion
+			#region Load easter egg
 			easterEgg = Content.Load<Video>("easter egg");
 			videoPlayer.IsLooped = true;
 			videoPlayer.Volume = 1.0f;
+			#endregion
 
-			// Load cats
+			#region Instantiate cats
 			HUDCat = new Cat(Vector2.Zero, -1, null,
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			cats[0] = new Cat(Vector2.Zero, 0,
@@ -246,32 +281,86 @@ namespace Cat_Planet_2
 				"I don't know where these rocks\n" +
 				"      are coming from!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
-
-			// Load gems
+			cats[25] = new Cat(Vector2.Zero, 25,
+				"Cat!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[26] = new Cat(Vector2.Zero, 26,
+				"Pla!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[27] = new Cat(Vector2.Zero, 27,
+				"Net!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[28] = new Cat(Vector2.Zero, 28,
+				"Help!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[29] = new Cat(Vector2.Zero, 29,
+				"Up there is a war zone!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[30] = new Cat(Vector2.Zero, 30,
+				"Spinning plasma of doom!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[31] = new Cat(Vector2.Zero, 31,
+				"Obviously work of the fish!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[32] = new Cat(Vector2.Zero, 32,
+				"The gem!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[33] = new Cat(Vector2.Zero, 33,
+				"Be careful here!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[34] = new Cat(Vector2.Zero, 34,
+				"The cat below me is lying!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[35] = new Cat(Vector2.Zero, 35,
+				"The bottom cat is\n" + 
+				"telling the truth!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[36] = new Cat(Vector2.Zero, 36,
+				"I'm lying!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[37] = new Cat(Vector2.Zero, 37,
+				"The first cat is the same\n" +
+				"  as the one above me!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			#endregion
+			#region Instantiate gems
 			gems[0] = new Gem(Vector2.Zero, gemTexture, Color.Cyan);
 			gems[1] = new Gem(Vector2.Zero, gemTexture, Color.Lime);
 			gems[2] = new Gem(Vector2.Zero, gemTexture, Color.Red);
 			gems[3] = new Gem(Vector2.Zero, gemTexture, Color.Yellow);
 			gems[4] = new Gem(Vector2.Zero, gemTexture, Color.Violet);
+			#endregion
 
-			// Load levels
+			#region Load levels
 			StreamReader sr = new StreamReader("Content/levels.txt");
 			levels[0, 0] = new Level(sr, new Vector2(0, 0), Level.Type.WarZone, backgrounds[2], pixel, cats, gems, obTextures);
+			levels[4, 6] = new Level(sr, new Vector2(4, 6), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/4-6"), cats, gems, obTextures);
+			levels[4, 7] = new Level(sr, new Vector2(4, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/4-7"), cats, gems, obTextures);
+			levels[4, 8] = new Level(sr, new Vector2(4, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/4-8"), cats, gems, obTextures);
 			levels[5, 5] = new Level(sr, new Vector2(5, 5), Level.Type.EasterEgg, backgrounds[1], pixel, cats, gems, obTextures);
+			levels[5, 6] = new Level(sr, new Vector2(5, 6), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/5-6"), cats, gems, obTextures);
+			levels[5, 7] = new Level(sr, new Vector2(5, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/5-7"), cats, gems, obTextures);
+			levels[5, 8] = new Level(sr, new Vector2(5, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/5-8"), cats, gems, obTextures);
 			levels[6, 2] = new Level(sr, new Vector2(6, 2), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/6-2"), cats, gems, obTextures);
 			levels[6, 3] = new Level(sr, new Vector2(6, 3), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/6-3"), cats, gems, obTextures);
 			levels[6, 4] = new Level(sr, new Vector2(6, 4), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/6-4"), cats, gems, obTextures);
 			levels[6, 5] = new Level(sr, new Vector2(6, 5), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-5"), cats, gems, obTextures);
+			levels[6, 6] = new Level(sr, new Vector2(6, 6), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-6"), cats, gems, obTextures);
+			levels[6, 7] = new Level(sr, new Vector2(6, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-7"), cats, gems, obTextures);
+			levels[6, 8] = new Level(sr, new Vector2(6, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-8"), cats, gems, obTextures);
 			levels[7, 2] = new Level(sr, new Vector2(7, 2), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-2"), cats, gems, obTextures);
 			levels[7, 3] = new Level(sr, new Vector2(7, 3), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-3"), cats, gems, obTextures);
 			levels[7, 4] = new Level(sr, new Vector2(7, 4), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-4"), cats, gems, obTextures);
 			levels[7, 5] = new Level(sr, new Vector2(7, 5), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-5"), cats, gems, obTextures);
 			levels[7, 6] = new Level(sr, new Vector2(7, 6), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-6"), cats, gems, obTextures);
+			levels[7, 7] = new Level(sr, new Vector2(7, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/7-7"), cats, gems, obTextures);
+			levels[7, 8] = new Level(sr, new Vector2(7, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/7-8"), cats, gems, obTextures);
 			levels[8, 2] = new Level(sr, new Vector2(8, 2), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-2"), cats, gems, obTextures);
 			levels[8, 3] = new Level(sr, new Vector2(8, 3), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-3"), cats, gems, obTextures);
 			levels[8, 4] = new Level(sr, new Vector2(8, 4), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-4"), cats, gems, obTextures);
 			levels[8, 5] = new Level(sr, new Vector2(8, 5), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-5"), cats, gems, obTextures);
 			levels[8, 6] = new Level(sr, new Vector2(8, 6), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-6"), cats, gems, obTextures);
+			levels[8, 7] = new Level(sr, new Vector2(8, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/8-7"), cats, gems, obTextures);
 			levels[9, 0] = new Level(sr, new Vector2(9, 0), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-0"), cats, gems, obTextures);
 			levels[9, 1] = new Level(sr, new Vector2(9, 1), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-1"), cats, gems, obTextures);
 			levels[9, 2] = new Level(sr, new Vector2(9, 2), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-2"), cats, gems, obTextures);
@@ -279,6 +368,7 @@ namespace Cat_Planet_2
 			levels[9, 4] = new Level(sr, new Vector2(9, 4), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-4"), cats, gems, obTextures);
 			levels[9, 5] = new Level(sr, new Vector2(9, 5), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/9-5"), cats, gems, obTextures);
 			levels[9, 6] = new Level(sr, new Vector2(9, 6), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/9-6"), cats, gems, obTextures);
+			levels[9, 7] = new Level(sr, new Vector2(9, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/9-7"), cats, gems, obTextures);
 			levels[10, 0] = new Level(sr, new Vector2(10, 0), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-0"), cats, gems, obTextures);
 			levels[10, 1] = new Level(sr, new Vector2(10, 1), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-1"), cats, gems, obTextures);
 			levels[10, 2] = new Level(sr, new Vector2(10, 2), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-2"), cats, gems, obTextures);
@@ -290,11 +380,13 @@ namespace Cat_Planet_2
 			levels[11, 2] = new Level(sr, new Vector2(11, 2), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-2"), cats, gems, obTextures);
 			levels[11, 3] = new Level(sr, new Vector2(11, 3), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-3"), cats, gems, obTextures);
 			levels[11, 4] = new Level(sr, new Vector2(11, 4), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-4"), cats, gems, obTextures);
+			sr.Close();
+			#endregion
 
 			// Set up starting level
 			currentLevel = levels[11, 0]; // Start = 11, 0
 			previousLevel = levels[10, 0];
-			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, windowHeight - 128));
+			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, 459));
 			currentSong = canyonSong;
 			MediaPlayer.Volume = 0.85f;
 			MediaPlayer.IsRepeating = true;
@@ -349,17 +441,23 @@ namespace Cat_Planet_2
 
 				// Check obstacle collisions
 				bool check = true;
-				foreach (Obstacle o in currentLevel.obstacles)
+				foreach (DeathWall o in currentLevel.deathWalls)
+				{
+					if (o.hitBox.Intersects(angel.hitBox))
+					{
+						KillAngel();
+						check = false;
+						break;
+					}
+				}
+				foreach (FallingRock o in currentLevel.rocks)
 				{
 					o.Update();
 					if (o.hitBox.Intersects(angel.hitBox))
 					{
-						if (o.isDeadly)
-						{
-							KillAngel();
-							check = false;
-							break;
-						}
+						KillAngel();
+						check = false;
+						break;
 					}
 				}
 				foreach (ElectricFence e in currentLevel.fences)
@@ -377,11 +475,41 @@ namespace Cat_Planet_2
 						}
 					}
 				}
+				foreach (SpinningPlasma o in currentLevel.plasmas)
+				{
+					o.Update();
+					if (o.hitBox.Intersects(angel.hitBox))
+					{
+						KillAngel();
+						check = false;
+						break;
+					}
+				}
+				foreach (RocketLauncher r in currentLevel.launchers)
+				{
+					if (r.Update(angel, currentLevel.walls, currentLevel.links))
+					{
+						gemExplosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
+						//Play explosion sound
+						if (angel.hitBox.Intersects(r.rocket.hitBox))
+						{
+							KillAngel();
+							check = false;
+						}
+						r.pause = 0;
+						r.rocket.position.X = -10000;
+						r.rocket.position.Y = -10000;
+					}
+				}
+
+				foreach (Timer t in currentLevel.timers)
+				{
+					t.Update(currentLevel);
+				}
 
 				// Check button and timer status
 				for (int i = 0; i < currentLevel.buttons.Count; i++)
 				{
-					currentLevel.timers[i].Update(currentLevel);
 					if (angel.hitBox.Intersects(currentLevel.buttons[i].hitBox))
 					{
 						currentLevel.buttons[i].activated = true;
@@ -399,6 +527,11 @@ namespace Cat_Planet_2
 							{
 								previousLevel = currentLevel;
 								currentLevel = levels[(int)l.levelTo.X, (int)l.levelTo.Y];
+								foreach (FallingRock r in currentLevel.rocks)
+								{
+									r.hitBox.Y = (int)r.initialPosition.Y;
+									r.motion.Y = r.initialSpeed.Y;
+								}
 								if (previousLevel.type != currentLevel.type)
 									ChangeSong();
 							}
@@ -515,15 +648,24 @@ namespace Cat_Planet_2
 				foreach (Timer t in currentLevel.timers)
 					t.Draw(spriteBatch);
 				angel.Draw(spriteBatch);
-				foreach (Obstacle o in currentLevel.obstacles)
+				foreach (DeathWall o in currentLevel.deathWalls)
 					o.Draw(spriteBatch);
-				foreach (ElectricFence e in currentLevel.fences)
-					e.Draw(spriteBatch);
+				foreach (FallingRock o in currentLevel.rocks)
+					o.Draw(spriteBatch);
+				foreach (RocketLauncher r in currentLevel.launchers)
+				{
+					r.Draw(spriteBatch);
+					r.rocket.Draw(spriteBatch);
+				}
 				if (currentLevel != levels[0, 0] && currentLevel != levels[5, 5])
 					currentLevel.DrawFG(spriteBatch, windowWidth, windowHeight);
 				else
 					foreach (Wall w in currentLevel.walls)
 						w.Draw(pixel, spriteBatch);
+				foreach (ElectricFence e in currentLevel.fences)
+					e.Draw(spriteBatch);
+				foreach (SpinningPlasma p in currentLevel.plasmas)
+					p.Draw(spriteBatch);
 				foreach (Cat c in currentLevel.cats)
 					c.Draw(spriteBatch);
 				if (deathExplosion != null)

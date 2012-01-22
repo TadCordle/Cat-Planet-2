@@ -17,10 +17,13 @@ namespace Cat_Planet_2
 		public List<Cat> cats;
 		public Gem gem;
 		public List<Link> links;
-		public List<Obstacle> obstacles;
+		public List<DeathWall> deathWalls;
+		public List<FallingRock> rocks;
 		public List<ElectricFence> fences;
 		public List<Button> buttons;
 		public List<Timer> timers;
+		public List<SpinningPlasma> plasmas;
+		public List<RocketLauncher> launchers;
 		public Dictionary<Vector2, Vector2> restartPosition;
 		public Dictionary<string, Color> colors;
 		Texture2D back, fore;
@@ -32,10 +35,14 @@ namespace Cat_Planet_2
 			walls = new List<Wall>();
 			cats = new List<Cat>();
 			links = new List<Link>();
-			obstacles = new List<Obstacle>();
+			deathWalls = new List<DeathWall>();
+			rocks = new List<FallingRock>();
 			fences = new List<ElectricFence>();
 			buttons = new List<Button>();
 			timers = new List<Timer>();
+			plasmas = new List<SpinningPlasma>();
+			launchers = new List<RocketLauncher>();
+
 			colors = new Dictionary<string, Color>();
 			colors.Add("red", Color.Red);
 			colors.Add("orange", Color.Orange);
@@ -62,7 +69,9 @@ namespace Cat_Planet_2
 			 * rock [posx posy speedx speedy]
 			 * fence [posx posy width height color index]
 			 * button [posx posy color index]
-			 * timer [posx posy index time loop?] 
+			 * timer [posx posy index time loop?] // make radius in multiples of 3
+			 * plasma [posx posy radius counterclockwise?]
+			 * launcher [posx posy]
 			 * !				Denotes end of board
 			 **************************************************************************************************/
 
@@ -70,7 +79,7 @@ namespace Cat_Planet_2
 			{
 				if (line != null)
 				{
-					string[] splitLine = line.Split(' ');
+					string[] splitLine = line.Trim().Split(' ');
 					if (splitLine[0] == "restart")
 					{
 						restartPosition = new Dictionary<Vector2, Vector2>(int.Parse(splitLine[1]));
@@ -99,7 +108,7 @@ namespace Cat_Planet_2
 					}
 					else if (splitLine[0] == "deathwall")
 					{
-						obstacles.Add(new DeathWall(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4]))));
+						deathWalls.Add(new DeathWall(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4]))));
 					}
 					else if (splitLine[0] == "fence")
 					{
@@ -107,7 +116,7 @@ namespace Cat_Planet_2
 					}
 					else if (splitLine[0] == "rock")
 					{
-						obstacles.Add(new FallingRock(obTextures["rock"][0], new Vector2(int.Parse(splitLine[1]), int.Parse(splitLine[2])), new Vector2(int.Parse(splitLine[3]), int.Parse(splitLine[4])), new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 64, 64)));
+						rocks.Add(new FallingRock(obTextures["rock"][0], new Vector2(int.Parse(splitLine[1]), int.Parse(splitLine[2])), new Vector2(int.Parse(splitLine[3]), int.Parse(splitLine[4])), new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 64, 64)));
 					}
 					else if (splitLine[0] == "button")
 					{
@@ -116,6 +125,14 @@ namespace Cat_Planet_2
 					else if (splitLine[0] == "timer")
 					{
 						timers.Insert(int.Parse(splitLine[3]), new Timer(obTextures["timefront"][0], obTextures["timeback"][0], new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 48, 48), int.Parse(splitLine[3]), int.Parse(splitLine[4]), int.Parse(splitLine[5]) == 1));
+					}
+					else if (splitLine[0] == "plasma")
+					{
+						plasmas.Add(new SpinningPlasma(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 32, 32), int.Parse(splitLine[3]), float.Parse(splitLine[4]), splitLine[5] == "1", new AnimatedTexture(obTextures["plasma"], 1, false)));
+					}
+					else if (splitLine[0] == "launcher")
+					{
+						launchers.Add(new RocketLauncher(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 48, 48), obTextures["launcher"][0], obTextures["rocket"][0]));
 					}
 				}
 				line = sr.ReadLine();

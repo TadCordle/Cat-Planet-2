@@ -61,11 +61,24 @@ Content\objects\rock.xnb
 Content\objects\timer back.xnb
 Content\objects\timer front.xnb
 Content\cavemus.xnb
-Content\backdrops\lab.xnb
 Content\foregrounds\7-6.xnb
 Content\foregrounds\8-6.xnb
 Content\foregrounds\9-6.xnb
+Content\foregrounds\9-7.xnb
+Content\backdrops\lab.xnb
+Content\foregrounds\8-7.xnb
+Content\foregrounds\6-6.xnb
+Content\foregrounds\7-7.xnb
+Content\objects\plasma ball 1.xnb
+Content\objects\plasma ball 2.xnb
+Content\objects\plasma ball 3.xnb
+Content\foregrounds\7-8.xnb
+Content\foregrounds\6-7.xnb
+Content\foregrounds\6-8.xnb
+Content\foregrounds\5-7.xnb
+Content\labmus.xnb
 Content\canyonmus.wma
 Content\easter egg.wmv
 Content\cavemus.wma
+Content\labmus.wma
 Content\levels.txt

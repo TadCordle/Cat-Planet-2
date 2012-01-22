@@ -119,11 +119,14 @@
     <Compile Include="Level.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="Obstacle.cs" />
+    <Compile Include="Rocket.cs" />
+    <Compile Include="RocketLauncher.cs" />
     <Compile Include="Shapes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="DeathWall.cs" />
+    <Compile Include="SpinningPlasma.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="Wall.cs" />
   </ItemGroup>

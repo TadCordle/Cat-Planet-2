@@ -11,9 +11,9 @@ namespace Cat_Planet_2
 	class FallingRock : Obstacle
 	{
 		Texture2D texture;
-		Vector2 motion;
-		Vector2 initialPosition;
-		Vector2 initialSpeed;
+		public Vector2 motion;
+		public Vector2 initialPosition;
+		public Vector2 initialSpeed;
 		float angle;
 
 		public FallingRock(Texture2D texture, Vector2 initialPosition, Vector2 initialSpeed, Rectangle hitbox)
