@@ -14,14 +14,46 @@ namespace Cat_Planet_2
 		Vector2 motion;
 		public float angle;
 		Texture2D texture;
+		Texture2D trailTexture;
+		List<TrailPiece> trail;
+		private class TrailPiece
+		{
+			int aliveTime;
+			Vector2 position;
+			Texture2D texture;
 
-		public Rocket(Rectangle hitBox, float angle, Texture2D texture)
+			public TrailPiece(int aliveTime, Vector2 position, Texture2D texture)
+			{
+				this.position = position;
+				this.aliveTime = aliveTime;
+				this.texture = texture;
+			}
+
+			public bool Update()
+			{
+				aliveTime--;
+				if (aliveTime <= 0)
+					return true;
+				return false;
+			}
+
+			public void Draw(SpriteBatch sb)
+			{
+				sb.Draw(texture, position, Color.Orange);
+			}
+		}
+
+		public Rocket(Rectangle hitBox, float angle, Texture2D texture, Texture2D trailTexture)
 			: base(hitBox)
 		{
+			this.trailTexture = trailTexture;
 			this.position = new Vector2(hitBox.X, hitBox.Y);
 			this.texture = texture;
 			this.angle = angle;
 			motion = new Vector2((float)Math.Sin(angle) * 8, (float)Math.Cos(angle) * 8);
+			trail = new List<TrailPiece>();
+			for (int i = 0; i < 10; i++)
+				trail.Add(new TrailPiece(10 - i, this.position, trailTexture));
 		}
 
 		public override void Update()
@@ -60,6 +92,10 @@ namespace Cat_Planet_2
 			hitBox.X = (int)position.X;
 			hitBox.Y = (int)position.Y;
 
+			for (int i = 0; i < trail.Count; i++)
+				if (trail[i].Update())
+					trail.RemoveAt(i);
+			trail.Insert(0, new TrailPiece(10, position, trailTexture));
 			if (hitBox.Intersects(angel.hitBox))
 				return true;
 			foreach (Wall w in walls)
@@ -74,7 +110,9 @@ namespace Cat_Planet_2
 
 		public override void Draw(SpriteBatch sb)
 		{
-			sb.Draw(texture, hitBox, null, Color.White, angle, new Vector2(16, 8), SpriteEffects.None, 1);
+			foreach (TrailPiece t in trail)
+				t.Draw(sb);
+			sb.Draw(texture, new Rectangle(hitBox.X + 8, hitBox.Y + 8, texture.Width, texture.Height), null, Color.White, angle, new Vector2(16, 8), SpriteEffects.None, 1);
 		}
 	}
 }

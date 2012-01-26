@@ -1,3 +1,9 @@
+// STUFF TO DO
+// break levels.txt into individual files
+// alter level parser in levels.cs
+// change initially loaded levels
+// Uncomment LoadLevels() in Update method
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +22,7 @@ namespace Cat_Planet_2
 {
 	public class MainGame : Microsoft.Xna.Framework.Game
 	{
+		#region Variables
 		// Objects
 		Angel angel;
 		Explosion deathExplosion;
@@ -71,16 +78,18 @@ namespace Cat_Planet_2
 		bool endGame;
 		bool goTime;
 
+		ContentManager levelTextureHandler;
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		int windowWidth, windowHeight;
+		#endregion
 
 		public MainGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
 		}
-
+		
 		protected override void Initialize()
 		{
 			// Set up window
@@ -95,7 +104,7 @@ namespace Cat_Planet_2
 
 			angelNormalTexture = new Texture2D[2];
 			angelFlyTexture = new Texture2D[3];
-			backgrounds = new Texture2D[7];
+			backgrounds = new Texture2D[7]; // Delete this later
 			catNormalTexture = new Texture2D[7];
 			catHitTexture = new Texture2D[8];
 			obTextures = new Dictionary<string, Texture2D[]>();
@@ -115,10 +124,11 @@ namespace Cat_Planet_2
 			
 			base.Initialize();
 		}
-
+		
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+			levelTextureHandler = new ContentManager(this.Services, "Content");
 			font = Content.Load<SpriteFont>("font");
 
 			#region Load angel
@@ -170,15 +180,9 @@ namespace Cat_Planet_2
 			Texture2D[] launcherTexture = new Texture2D[1];
 			launcherTexture[0] = Content.Load<Texture2D>("objects/launcher");
 			obTextures.Add("launcher", launcherTexture);
-			#endregion
-			#region Load backgrounds
-			backgrounds[0] = Content.Load<Texture2D>("backdrops/canyons");
-			backgrounds[1] = Content.Load<Texture2D>("backdrops/caves");
-			backgrounds[2] = Content.Load<Texture2D>("backdrops/warzone");
-			backgrounds[3] = Content.Load<Texture2D>("backdrops/lab");
-			backgrounds[4] = Content.Load<Texture2D>("backdrops/underwater");
-			backgrounds[5] = Content.Load<Texture2D>("backdrops/underwater transition");
-			//backgrounds[6] = Content.Load<Texture2D>("backdrops/final");
+			Texture2D[] trailTexture = new Texture2D[1];
+			trailTexture[0] = explosionTexture;
+			obTextures.Add("trail", trailTexture);
 			#endregion
 			#region Load music
 			// Load sounds and music
@@ -281,6 +285,10 @@ namespace Cat_Planet_2
 				"I don't know where these rocks\n" +
 				"      are coming from!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[23] = new Cat(Vector2.Zero, 23,
+				"The fish have made Cat Planet\n" +
+				"     a dangerous place!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			cats[25] = new Cat(Vector2.Zero, 25,
 				"Cat!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
@@ -322,6 +330,17 @@ namespace Cat_Planet_2
 				"The first cat is the same\n" +
 				"  as the one above me!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[38] = new Cat(Vector2.Zero, 38,
+				"Those rocket launchers are\n" +
+				"       dangerous!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[39] = new Cat(Vector2.Zero, 39,
+				"Explosions are cool!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[47] = new Cat(Vector2.Zero, 47,
+				"Reminds me of 'Nam.",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+
 			#endregion
 			#region Instantiate gems
 			gems[0] = new Gem(Vector2.Zero, gemTexture, Color.Cyan);
@@ -331,71 +350,27 @@ namespace Cat_Planet_2
 			gems[4] = new Gem(Vector2.Zero, gemTexture, Color.Violet);
 			#endregion
 
-			#region Load levels
-			StreamReader sr = new StreamReader("Content/levels.txt");
-			levels[0, 0] = new Level(sr, new Vector2(0, 0), Level.Type.WarZone, backgrounds[2], pixel, cats, gems, obTextures);
-			levels[4, 6] = new Level(sr, new Vector2(4, 6), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/4-6"), cats, gems, obTextures);
-			levels[4, 7] = new Level(sr, new Vector2(4, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/4-7"), cats, gems, obTextures);
-			levels[4, 8] = new Level(sr, new Vector2(4, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/4-8"), cats, gems, obTextures);
-			levels[5, 5] = new Level(sr, new Vector2(5, 5), Level.Type.EasterEgg, backgrounds[1], pixel, cats, gems, obTextures);
-			levels[5, 6] = new Level(sr, new Vector2(5, 6), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/5-6"), cats, gems, obTextures);
-			levels[5, 7] = new Level(sr, new Vector2(5, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/5-7"), cats, gems, obTextures);
-			levels[5, 8] = new Level(sr, new Vector2(5, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/5-8"), cats, gems, obTextures);
-			levels[6, 2] = new Level(sr, new Vector2(6, 2), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/6-2"), cats, gems, obTextures);
-			levels[6, 3] = new Level(sr, new Vector2(6, 3), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/6-3"), cats, gems, obTextures);
-			levels[6, 4] = new Level(sr, new Vector2(6, 4), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/6-4"), cats, gems, obTextures);
-			levels[6, 5] = new Level(sr, new Vector2(6, 5), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-5"), cats, gems, obTextures);
-			levels[6, 6] = new Level(sr, new Vector2(6, 6), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-6"), cats, gems, obTextures);
-			levels[6, 7] = new Level(sr, new Vector2(6, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-7"), cats, gems, obTextures);
-			levels[6, 8] = new Level(sr, new Vector2(6, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/6-8"), cats, gems, obTextures);
-			levels[7, 2] = new Level(sr, new Vector2(7, 2), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-2"), cats, gems, obTextures);
-			levels[7, 3] = new Level(sr, new Vector2(7, 3), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-3"), cats, gems, obTextures);
-			levels[7, 4] = new Level(sr, new Vector2(7, 4), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-4"), cats, gems, obTextures);
-			levels[7, 5] = new Level(sr, new Vector2(7, 5), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-5"), cats, gems, obTextures);
-			levels[7, 6] = new Level(sr, new Vector2(7, 6), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/7-6"), cats, gems, obTextures);
-			levels[7, 7] = new Level(sr, new Vector2(7, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/7-7"), cats, gems, obTextures);
-			levels[7, 8] = new Level(sr, new Vector2(7, 8), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/7-8"), cats, gems, obTextures);
-			levels[8, 2] = new Level(sr, new Vector2(8, 2), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-2"), cats, gems, obTextures);
-			levels[8, 3] = new Level(sr, new Vector2(8, 3), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-3"), cats, gems, obTextures);
-			levels[8, 4] = new Level(sr, new Vector2(8, 4), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-4"), cats, gems, obTextures);
-			levels[8, 5] = new Level(sr, new Vector2(8, 5), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-5"), cats, gems, obTextures);
-			levels[8, 6] = new Level(sr, new Vector2(8, 6), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/8-6"), cats, gems, obTextures);
-			levels[8, 7] = new Level(sr, new Vector2(8, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/8-7"), cats, gems, obTextures);
-			levels[9, 0] = new Level(sr, new Vector2(9, 0), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-0"), cats, gems, obTextures);
-			levels[9, 1] = new Level(sr, new Vector2(9, 1), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-1"), cats, gems, obTextures);
-			levels[9, 2] = new Level(sr, new Vector2(9, 2), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-2"), cats, gems, obTextures);
-			levels[9, 3] = new Level(sr, new Vector2(9, 3), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-3"), cats, gems, obTextures);
-			levels[9, 4] = new Level(sr, new Vector2(9, 4), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/9-4"), cats, gems, obTextures);
-			levels[9, 5] = new Level(sr, new Vector2(9, 5), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/9-5"), cats, gems, obTextures);
-			levels[9, 6] = new Level(sr, new Vector2(9, 6), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/9-6"), cats, gems, obTextures);
-			levels[9, 7] = new Level(sr, new Vector2(9, 7), Level.Type.Labs, backgrounds[3], Content.Load<Texture2D>("foregrounds/9-7"), cats, gems, obTextures);
-			levels[10, 0] = new Level(sr, new Vector2(10, 0), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-0"), cats, gems, obTextures);
-			levels[10, 1] = new Level(sr, new Vector2(10, 1), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-1"), cats, gems, obTextures);
-			levels[10, 2] = new Level(sr, new Vector2(10, 2), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-2"), cats, gems, obTextures);
-			levels[10, 3] = new Level(sr, new Vector2(10, 3), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-3"), cats, gems, obTextures);
-			levels[10, 4] = new Level(sr, new Vector2(10, 4), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/10-4"), cats, gems, obTextures);
-			levels[10, 5] = new Level(sr, new Vector2(10, 5), Level.Type.Caves, backgrounds[1], Content.Load<Texture2D>("foregrounds/10-5"), cats, gems, obTextures);
-			levels[11, 0] = new Level(sr, new Vector2(11, 0), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-0"), cats, gems, obTextures);
-			levels[11, 1] = new Level(sr, new Vector2(11, 1), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-1"), cats, gems, obTextures);
-			levels[11, 2] = new Level(sr, new Vector2(11, 2), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-2"), cats, gems, obTextures);
-			levels[11, 3] = new Level(sr, new Vector2(11, 3), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-3"), cats, gems, obTextures);
-			levels[11, 4] = new Level(sr, new Vector2(11, 4), Level.Type.Canyons, backgrounds[0], Content.Load<Texture2D>("foregrounds/11-4"), cats, gems, obTextures);
-			sr.Close();
-			#endregion
-
 			// Set up starting level
+			StreamReader sr = new StreamReader("Content/levels/11-0.txt");
+			levels[11, 0] = new Level(sr, new Vector2(11, 0), Level.Type.Canyons, Content.Load<Texture2D>("backdrops/canyons"), levelTextureHandler.Load<Texture2D>("foregrounds/11-0"), cats, gems, obTextures);
+			sr.Close();
+			sr = new StreamReader("Content/levels/10-0.txt");
+			levels[10, 0] = new Level(sr, new Vector2(10, 0), Level.Type.Canyons, Content.Load<Texture2D>("backdrops/canyons"), levelTextureHandler.Load<Texture2D>("foregrounds/10-0"), cats, gems, obTextures);
+			sr.Close();
+
 			currentLevel = levels[11, 0]; // Start = 11, 0
 			previousLevel = levels[10, 0];
+			LoadLevels();
+
 			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, 459));
 			currentSong = canyonSong;
 			MediaPlayer.Volume = 0.85f;
 			MediaPlayer.IsRepeating = true;
 			MediaPlayer.Play(currentSong);
 		}
-
+		
 		protected override void UnloadContent()
 		{
-			Content.Unload();
 		}
 
 		protected override void Update(GameTime gameTime)
@@ -406,9 +381,9 @@ namespace Cat_Planet_2
 
 			if (!endGame)
 			{
-				// Update angel
 				wingFlaps += angel.Update(currentLevel.walls);
-				
+
+				#region Update collectables
 				// Check cat collisions
 				foreach (Cat c in currentLevel.cats)
 				{
@@ -432,6 +407,7 @@ namespace Cat_Planet_2
 					}
 					currentLevel.gem.Update();
 				}
+				#endregion
 
 				// Update explosions
 				if (deathExplosion != null)
@@ -439,6 +415,7 @@ namespace Cat_Planet_2
 				if (gemExplosion != null)
 					gemExplosion.Update();
 
+				#region Update obstacles
 				// Check obstacle collisions
 				bool check = true;
 				foreach (DeathWall o in currentLevel.deathWalls)
@@ -487,7 +464,7 @@ namespace Cat_Planet_2
 				}
 				foreach (RocketLauncher r in currentLevel.launchers)
 				{
-					if (r.Update(angel, currentLevel.walls, currentLevel.links))
+					if (r.Update(angel, currentLevel.walls, currentLevel.links, rocketLaunch))
 					{
 						gemExplosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
 						//Play explosion sound
@@ -501,7 +478,9 @@ namespace Cat_Planet_2
 						r.rocket.position.Y = -10000;
 					}
 				}
+				#endregion
 
+				#region Update timers and buttons
 				foreach (Timer t in currentLevel.timers)
 				{
 					t.Update(currentLevel);
@@ -516,7 +495,9 @@ namespace Cat_Planet_2
 						currentLevel.timers[i].activated = true;
 					}
 				}
+				#endregion
 
+				#region Check links
 				// Check level link collisions
 				if (check)
 					foreach (Link l in currentLevel.links)
@@ -527,10 +508,17 @@ namespace Cat_Planet_2
 							{
 								previousLevel = currentLevel;
 								currentLevel = levels[(int)l.levelTo.X, (int)l.levelTo.Y];
+								LoadLevels();
+
 								foreach (FallingRock r in currentLevel.rocks)
 								{
 									r.hitBox.Y = (int)r.initialPosition.Y;
 									r.motion.Y = r.initialSpeed.Y;
+								}
+								foreach (RocketLauncher r in currentLevel.launchers)
+								{
+									r.rocket.position = new Vector2(-10000, -10000);
+									r.pause = 0;
 								}
 								if (previousLevel.type != currentLevel.type)
 									ChangeSong();
@@ -559,6 +547,7 @@ namespace Cat_Planet_2
 							break;
 						}
 					}
+				#endregion
 
 				// Update HUD count
 				HUDCat.hit = false;
@@ -585,7 +574,6 @@ namespace Cat_Planet_2
 
 			base.Update(gameTime);
 		}
-		
 		private void KillAngel()
 		{
 			deathExplosion = new Explosion(new Vector2(angel.hitBox.X + 8, angel.hitBox.Y + 8), Color.White, explosionTexture);
@@ -594,7 +582,6 @@ namespace Cat_Planet_2
 			angel.motion = Vector2.Zero;
 			deaths++;
 		}
-
 		private void ChangeSong()
 		{
 			MediaPlayer.Stop();
@@ -629,6 +616,65 @@ namespace Cat_Planet_2
 			}
 			if (currentSong != null)
 				MediaPlayer.Play(currentSong);
+		}
+		private void LoadLevels()
+		{
+			levelTextureHandler = new ContentManager(this.Services, "Content");
+
+			for (int i = 0; i < 12; i++)
+				for (int j = 0; j < 12; j++)
+					if ((Math.Abs(currentLevel.coordinates.X - i) > 1 || Math.Abs(currentLevel.coordinates.Y - j) > 1) && levels[i, j] != null)
+					{
+						levels[i, j].fore.Dispose();
+						levels[i, j] = null;
+					}
+
+			for (int i = -1; i <= 1; i++)
+				for (int j = -1; j <= 1; j++)
+					if (i != 0 || j != 0)
+					{
+						if (currentLevel.coordinates.X + i >= levels.GetLength(0) || currentLevel.coordinates.Y + j >= levels.GetLength(1) ||
+							currentLevel.coordinates.X + i < 0 || currentLevel.coordinates.Y + j < 0)
+							continue;
+						if (levels[(int)currentLevel.coordinates.X + i, (int)currentLevel.coordinates.Y + j] != null)
+							continue;
+
+						if (File.Exists("Content/levels/" + ((int)currentLevel.coordinates.X + i).ToString() + "-" + ((int)currentLevel.coordinates.Y + j).ToString() + ".txt"))
+						{
+							StreamReader sr = new StreamReader("Content/levels/" + ((int)currentLevel.coordinates.X + i).ToString() + "-" + ((int)currentLevel.coordinates.Y + j).ToString() + ".txt");
+							string bg = sr.ReadLine();
+							levels[(int)currentLevel.coordinates.X + i, (int)currentLevel.coordinates.Y + j] = new Level(
+								sr,
+								new Vector2(currentLevel.coordinates.X + i, currentLevel.coordinates.Y + j),
+								GetBGType(bg),
+								bg != "easter egg" ? Content.Load<Texture2D>("backdrops/" + bg) : pixel,
+								bg != "easter egg" ? levelTextureHandler.Load<Texture2D>("foregrounds/" + ((int)currentLevel.coordinates.X + i).ToString() + "-" + ((int)currentLevel.coordinates.Y + j).ToString()) : levelTextureHandler.Load<Texture2D>("pixel"),
+								cats, gems, obTextures);
+							sr.Close();
+						}
+					}
+		}
+		private Level.Type GetBGType(string bg)
+		{
+			switch (bg)
+			{
+				case "canyons":
+					return Level.Type.Canyons;
+				case "caves":
+					return Level.Type.Caves;
+				case "lab":
+					return Level.Type.Labs;
+				case "warzone":
+					return Level.Type.WarZone;
+				case "underwater":
+					return Level.Type.Underwater;
+				case "underwater transition":
+					return Level.Type.UnderwaterTransition;
+				case "final":
+					return Level.Type.Final;
+				default:
+					return Level.Type.EasterEgg;
+			}
 		}
 
 		protected override void Draw(GameTime gameTime)

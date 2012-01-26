@@ -1,0 +1,8 @@
+easter egg
+restart 1 6 5 100 100
+wall 0 0 960 32
+wall 0 0 32 720
+wall 928 -21 32 345
+wall 928 401 32 329
+wall 0 688 960 32
+link 980 0 32 720 6 5 1 0

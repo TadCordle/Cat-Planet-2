@@ -26,12 +26,11 @@ namespace Cat_Planet_2
 		public List<RocketLauncher> launchers;
 		public Dictionary<Vector2, Vector2> restartPosition;
 		public Dictionary<string, Color> colors;
-		Texture2D back, fore;
+		public Texture2D back, fore;
 
 		public Level(StreamReader sr, Vector2 coordinates, Type type, Texture2D back, Texture2D fore, Cat[] cArray, Gem[] gArray, Dictionary<string, Texture2D[]> obTextures)
 		{
 			this.coordinates = coordinates;
-			string coordString = ((int)coordinates.X).ToString() + " " + ((int)(coordinates.Y)).ToString();
 			walls = new List<Wall>();
 			cats = new List<Cat>();
 			links = new List<Link>();
@@ -52,10 +51,6 @@ namespace Cat_Planet_2
 			colors.Add("purple", Color.Purple);
 
 			string line = "";
-			while (line != coordString)
-				line = sr.ReadLine();
-
-			line = sr.ReadLine();
 
 			/**************************************************************************************************
 			 * Format of text file:
@@ -75,8 +70,10 @@ namespace Cat_Planet_2
 			 * !				Denotes end of board
 			 **************************************************************************************************/
 
-			while (!(sr.EndOfStream || line == "!"))
+			while (!sr.EndOfStream)
 			{
+				line = sr.ReadLine();
+
 				if (line != null)
 				{
 					string[] splitLine = line.Trim().Split(' ');
@@ -132,10 +129,9 @@ namespace Cat_Planet_2
 					}
 					else if (splitLine[0] == "launcher")
 					{
-						launchers.Add(new RocketLauncher(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 48, 48), obTextures["launcher"][0], obTextures["rocket"][0]));
+						launchers.Add(new RocketLauncher(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 48, 48), obTextures["launcher"][0], obTextures["rocket"][0], obTextures["trail"][0]));
 					}
 				}
-				line = sr.ReadLine();
 			}
 			this.back = back;
 			this.fore = fore;
