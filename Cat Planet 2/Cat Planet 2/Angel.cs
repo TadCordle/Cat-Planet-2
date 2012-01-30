@@ -64,7 +64,7 @@ namespace Cat_Planet_2
 			#region Wall collision checking
 			foreach (Wall w in walls)
 			{
-				if (this.hitBox.Intersects(w.hitBox))
+				if (this.hitBox.Intersects(w.hitBox) && w.hitable)
 				{
 					Vector2 unit = motion;
 					unit.Normalize();

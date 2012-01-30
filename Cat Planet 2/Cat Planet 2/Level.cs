@@ -24,6 +24,7 @@ namespace Cat_Planet_2
 		public List<Timer> timers;
 		public List<SpinningPlasma> plasmas;
 		public List<RocketLauncher> launchers;
+		public List<Bubbles> bubbles;
 		public Dictionary<Vector2, Vector2> restartPosition;
 		public Dictionary<string, Color> colors;
 		public Texture2D back, fore;
@@ -41,6 +42,7 @@ namespace Cat_Planet_2
 			timers = new List<Timer>();
 			plasmas = new List<SpinningPlasma>();
 			launchers = new List<RocketLauncher>();
+			bubbles = new List<Bubbles>();
 
 			colors = new Dictionary<string, Color>();
 			colors.Add("red", Color.Red);
@@ -107,6 +109,10 @@ namespace Cat_Planet_2
 					{
 						deathWalls.Add(new DeathWall(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4]))));
 					}
+					else if (splitLine[0] == "obstaclewall")
+					{
+						walls.Add(new ObstacleWall(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4]))));
+					}
 					else if (splitLine[0] == "fence")
 					{
 						fences.Insert(int.Parse(splitLine[6]), new ElectricFence(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4])), obTextures["fence"][0], colors[splitLine[5]], int.Parse(splitLine[6])));
@@ -131,6 +137,10 @@ namespace Cat_Planet_2
 					{
 						launchers.Add(new RocketLauncher(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 48, 48), obTextures["launcher"][0], obTextures["rocket"][0], obTextures["trail"][0]));
 					}
+					else if (splitLine[0] == "bubbles")
+					{
+						bubbles.Add(new Bubbles(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4])), new Vector2(int.Parse(splitLine[5]), int.Parse(splitLine[6])), obTextures["bubble"][0]));
+					}
 				}
 			}
 			this.back = back;
@@ -145,6 +155,8 @@ namespace Cat_Planet_2
 		}
 		public void DrawFG(SpriteBatch sb, int w, int h)
 		{
+			if (fore == null)
+				return;
 			Rectangle bounds = new Rectangle(0, 0, w, h);
 			sb.Draw(fore, bounds, Color.White);
 		}

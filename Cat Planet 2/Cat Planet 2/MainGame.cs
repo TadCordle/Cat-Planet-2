@@ -1,9 +1,3 @@
-// STUFF TO DO
-// break levels.txt into individual files
-// alter level parser in levels.cs
-// change initially loaded levels
-// Uncomment LoadLevels() in Update method
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -121,7 +115,7 @@ namespace Cat_Planet_2
 			goTime = true;
 
 			videoPlayer = new VideoPlayer();
-			
+
 			base.Initialize();
 		}
 		
@@ -183,14 +177,17 @@ namespace Cat_Planet_2
 			Texture2D[] trailTexture = new Texture2D[1];
 			trailTexture[0] = explosionTexture;
 			obTextures.Add("trail", trailTexture);
+			Texture2D[] bubbleTexture = new Texture2D[1];
+			bubbleTexture[0] = explosionTexture;
+			obTextures.Add("bubble", bubbleTexture);
 			#endregion
 			#region Load music
 			// Load sounds and music
 			canyonSong = Content.Load<Song>("canyonmus");
 			caveSong = Content.Load<Song>("cavemus");
 			labSong = Content.Load<Song>("labmus");
-			//warSong = Content.Load<Song>("warmus");
-			//waterSong = Content.Load<Song>("watermus");
+			warSong = Content.Load<Song>("warmus");
+			waterSong = Content.Load<Song>("watermus");
 			//finalSong = Content.Load<Song>("finalmus");
 			#endregion
 			#region Load sounds
@@ -289,6 +286,9 @@ namespace Cat_Planet_2
 				"The fish have made Cat Planet\n" +
 				"     a dangerous place!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[24] = new Cat(Vector2.Zero, 24,
+				"War is not the answer!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			cats[25] = new Cat(Vector2.Zero, 25,
 				"Cat!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
@@ -337,10 +337,43 @@ namespace Cat_Planet_2
 			cats[39] = new Cat(Vector2.Zero, 39,
 				"Explosions are cool!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[40] = new Cat(Vector2.Zero, 40,
+				"More rocks!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[41] = new Cat(Vector2.Zero, 41,
+				"   The crows are no more,\n" +
+				"but the fish are much worse.",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[42] = new Cat(Vector2.Zero, 42,
+				"So much destruction!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[43] = new Cat(Vector2.Zero, 43,
+				"We're losing!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[44] = new Cat(Vector2.Zero, 44,
+				"The gem here is well\n" +
+				"     protected!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[45] = new Cat(Vector2.Zero, 45,
+				"My friend is trapped!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[46] = new Cat(Vector2.Zero, 46,
+				"I'm actually safe from\n" +
+				" the rockets up here!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			cats[47] = new Cat(Vector2.Zero, 47,
 				"Reminds me of 'Nam.",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
-
+			cats[48] = new Cat(Vector2.Zero, 48,
+				"I think that's what we're\n" +
+				"    fighting over...",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[49] = new Cat(Vector2.Zero, 49,
+				"They're everywhere!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[50] = new Cat(Vector2.Zero, 50,
+				"Imperialist fish!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			#endregion
 			#region Instantiate gems
 			gems[0] = new Gem(Vector2.Zero, gemTexture, Color.Cyan);
@@ -356,6 +389,9 @@ namespace Cat_Planet_2
 			sr.Close();
 			sr = new StreamReader("Content/levels/10-0.txt");
 			levels[10, 0] = new Level(sr, new Vector2(10, 0), Level.Type.Canyons, Content.Load<Texture2D>("backdrops/canyons"), levelTextureHandler.Load<Texture2D>("foregrounds/10-0"), cats, gems, obTextures);
+			sr.Close();
+			sr = new StreamReader("Content/levels/0-0.txt");
+			levels[0, 0] = new Level(sr, new Vector2(0, 0), Level.Type.WarZone, Content.Load<Texture2D>("backdrops/warzone"), levelTextureHandler.Load<Texture2D>("pixel"), cats, gems, obTextures);
 			sr.Close();
 
 			currentLevel = levels[11, 0]; // Start = 11, 0
@@ -382,6 +418,15 @@ namespace Cat_Planet_2
 			if (!endGame)
 			{
 				wingFlaps += angel.Update(currentLevel.walls);
+
+				#region Lol glitch
+				if (angel.position.Y > 2000 && currentLevel.type != Level.Type.EasterEgg)
+				{
+					currentLevel.type = Level.Type.EasterEgg;
+					currentLevel.fore = null;
+					ChangeSong();
+				}
+				#endregion
 
 				#region Update collectables
 				// Check cat collisions
@@ -464,9 +509,12 @@ namespace Cat_Planet_2
 				}
 				foreach (RocketLauncher r in currentLevel.launchers)
 				{
+					if (r.explosion != null)
+						r.explosion.Update();
 					if (r.Update(angel, currentLevel.walls, currentLevel.links, rocketLaunch))
 					{
-						gemExplosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
+						//gemExplosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
+						r.explosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
 						//Play explosion sound
 						if (angel.hitBox.Intersects(r.rocket.hitBox))
 						{
@@ -476,6 +524,18 @@ namespace Cat_Planet_2
 						r.pause = 0;
 						r.rocket.position.X = -10000;
 						r.rocket.position.Y = -10000;
+					}
+				}
+				foreach (Bubbles b in currentLevel.bubbles)
+				{
+					b.Update();
+					if (angel.hitBox.Intersects(b.hitBox))
+					{
+						if (b.motion.X > 0 && angel.motion.X < b.motion.X ||
+							b.motion.X < 0 && angel.motion.X > b.motion.X ||
+							b.motion.Y < 0 && angel.motion.Y > b.motion.Y ||
+							b.motion.Y > 0 && angel.motion.Y < b.motion.Y)
+							angel.motion += Vector2.Normalize(b.motion) * b.motion.Length() / 10;
 					}
 				}
 				#endregion
@@ -500,6 +560,7 @@ namespace Cat_Planet_2
 				#region Check links
 				// Check level link collisions
 				if (check)
+				{
 					foreach (Link l in currentLevel.links)
 					{
 						if (angel.hitBox.Intersects(l.hitBox))
@@ -515,11 +576,10 @@ namespace Cat_Planet_2
 									r.hitBox.Y = (int)r.initialPosition.Y;
 									r.motion.Y = r.initialSpeed.Y;
 								}
+								gemExplosion = null;
+								deathExplosion = null;
 								foreach (RocketLauncher r in currentLevel.launchers)
-								{
-									r.rocket.position = new Vector2(-10000, -10000);
-									r.pause = 0;
-								}
+									r.explosion = null;
 								if (previousLevel.type != currentLevel.type)
 									ChangeSong();
 							}
@@ -547,6 +607,7 @@ namespace Cat_Planet_2
 							break;
 						}
 					}
+				}
 				#endregion
 
 				// Update HUD count
@@ -712,12 +773,17 @@ namespace Cat_Planet_2
 					e.Draw(spriteBatch);
 				foreach (SpinningPlasma p in currentLevel.plasmas)
 					p.Draw(spriteBatch);
+				foreach (Bubbles b in currentLevel.bubbles)
+					b.Draw(spriteBatch);
 				foreach (Cat c in currentLevel.cats)
 					c.Draw(spriteBatch);
 				if (deathExplosion != null)
 					deathExplosion.Draw(spriteBatch);
 				if (gemExplosion != null)
 					gemExplosion.Draw(spriteBatch);
+				foreach (RocketLauncher r in currentLevel.launchers)
+					if (r.explosion != null)
+						r.explosion.Draw(spriteBatch);
 				HUDCat.Draw(spriteBatch);
 				spriteBatch.DrawString(font, catCount.ToString(), new Vector2(35, 2), Color.White);
 			}

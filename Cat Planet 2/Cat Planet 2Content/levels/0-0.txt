@@ -1,10 +1,7 @@
 warzone
 restart 1 10 0 480 480
 wall 300 600 250 70
-launcher 32 32
-launcher 928 32
-launcher 32 688
-launcher 928 688
+bubbles 0 360 960 360 0 -4
 fence 0 0 960 32 red 0
 fence 0 0 32 720 lime 1
 fence 928 0 32 720 yellow 2

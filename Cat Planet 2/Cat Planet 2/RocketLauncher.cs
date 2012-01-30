@@ -15,6 +15,7 @@ namespace Cat_Planet_2
 		const int pauseTime = 50;
 		public int pause;
 		Texture2D texture;
+		public Explosion explosion;
 
 		public RocketLauncher(Rectangle hitBox, Texture2D launchTexture, Texture2D rocketTexture, Texture2D trailTexture)
 			: base(hitBox)

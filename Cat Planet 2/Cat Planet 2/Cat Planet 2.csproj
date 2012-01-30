@@ -122,16 +122,17 @@
   <ItemGroup>
     <Compile Include="Angel.cs" />
     <Compile Include="AnimatedTexture.cs" />
+    <Compile Include="Bubbles.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="ElectricFence.cs" />
     <Compile Include="Explosion.cs" />
-    <Compile Include="ExplosionParticle.cs" />
     <Compile Include="FallingRock.cs" />
     <Compile Include="Gem.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="Obstacle.cs" />
+    <Compile Include="ObstacleWall.cs" />
     <Compile Include="Rocket.cs" />
     <Compile Include="RocketLauncher.cs" />
     <Compile Include="Shapes.cs" />
