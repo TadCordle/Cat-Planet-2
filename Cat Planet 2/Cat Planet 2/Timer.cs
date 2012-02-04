@@ -15,7 +15,7 @@ namespace Cat_Planet_2
 		public Rectangle hitBox;
 		public int index;
 		public bool activated;
-		bool loop;
+		public bool loop;
 
 		float angle, angleSpeed;
 		int maxTime;

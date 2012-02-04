@@ -14,7 +14,7 @@ namespace Cat_Planet_2
 		bool horizontal;
 		Random generator;
 		Texture2D texture;
-		Color color;
+		public Color color;
 
 		public int index;
 

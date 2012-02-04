@@ -23,6 +23,7 @@ namespace Cat_Planet_2
 		Explosion gemExplosion;
 		Cat[] cats;
 		Gem[] gems;
+		ElectricFence[] finalFences;
 		Cat HUDCat;
 		Level[,] levels;
 		Level currentLevel, previousLevel;
@@ -31,7 +32,6 @@ namespace Cat_Planet_2
 		// Sprites
 		Texture2D[] angelNormalTexture;
 		Texture2D[] angelFlyTexture;
-		Texture2D[] backgrounds;
 		Texture2D[] catNormalTexture;
 		Texture2D[] catHitTexture;
 		Texture2D gemTexture;
@@ -46,7 +46,6 @@ namespace Cat_Planet_2
 		SoundEffect meow;
 		SoundEffect explode;
 		SoundEffect getGem;
-		SoundEffect hitButton;
 		SoundEffect ticking;
 		SoundEffectInstance loopTick;
 		SoundEffect rocketLaunch;
@@ -98,7 +97,6 @@ namespace Cat_Planet_2
 
 			angelNormalTexture = new Texture2D[2];
 			angelFlyTexture = new Texture2D[3];
-			backgrounds = new Texture2D[7]; // Delete this later
 			catNormalTexture = new Texture2D[7];
 			catHitTexture = new Texture2D[8];
 			obTextures = new Dictionary<string, Texture2D[]>();
@@ -106,6 +104,7 @@ namespace Cat_Planet_2
 			levels = new Level[12, 12];
 			cats = new Cat[80];
 			gems = new Gem[5];
+			finalFences = new ElectricFence[5];
 
 			catCount = 0;
 			deaths = 0;
@@ -180,6 +179,9 @@ namespace Cat_Planet_2
 			Texture2D[] bubbleTexture = new Texture2D[1];
 			bubbleTexture[0] = explosionTexture;
 			obTextures.Add("bubble", bubbleTexture);
+			Texture2D[] starTexture = new Texture2D[1];
+			starTexture[0] = Content.Load<Texture2D>("objects/starfish");
+			obTextures.Add("starfish", starTexture);
 			#endregion
 			#region Load music
 			// Load sounds and music
@@ -195,11 +197,12 @@ namespace Cat_Planet_2
 			flap = Content.Load<SoundEffect>("whoosh");
 			meow = Content.Load<SoundEffect>("meow");
 			//explode = Content.Load<SoundEffect>("explode");
+			//die = Content.Load<SoundEffect>("die");
 			//getGem = Content.Load<SoundEffect>("getgem");
-			//hitButton = Content.Load<SoundEffect>("hitbutton");
-			//ticking = Content.Load<SoundEffect>("tick");
-			//loopTick = ticking.CreateInstance();
-			//loopTick.IsLooped = true;
+			ticking = Content.Load<SoundEffect>("ticking");
+			loopTick = ticking.CreateInstance();
+			loopTick.IsLooped = true;
+			loopTick.Volume = 0.25f;
 			//rocketLaunch = Content.Load<SoundEffect>("rocketlaunch");
 			#endregion
 			#region Load easter egg
@@ -374,6 +377,45 @@ namespace Cat_Planet_2
 			cats[50] = new Cat(Vector2.Zero, 50,
 				"Imperialist fish!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[51] = new Cat(Vector2.Zero, 51,
+				"We're underwater!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[52] = new Cat(Vector2.Zero, 52,
+				"Cat Planet Ocean!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[53] = new Cat(Vector2.Zero, 53,
+				"The bubbles carry\n" +
+				"   you places!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[54] = new Cat(Vector2.Zero, 54,
+				"Cats don't like water!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[55] = new Cat(Vector2.Zero, 55,
+				"BUBBLES!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[56] = new Cat(Vector2.Zero, 56,
+				"Time it right!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[57] = new Cat(Vector2.Zero, 57,
+				"Starfish are dangerous!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[58] = new Cat(Vector2.Zero, 58,
+				"But they're nothing \n" +
+				"  compared to the\n" +
+				"       fish!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[59] = new Cat(Vector2.Zero, 59,
+				"You're close to the\n" + 
+				"  final struggle!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[60] = new Cat(Vector2.Zero, 60,
+				"You need all the gems\n" +
+				"of light to continue!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[61] = new Cat(Vector2.Zero, 61,
+				"  Do you have 62 cats?\n" +
+				"There's no turning back.",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			#endregion
 			#region Instantiate gems
 			gems[0] = new Gem(Vector2.Zero, gemTexture, Color.Cyan);
@@ -382,8 +424,14 @@ namespace Cat_Planet_2
 			gems[3] = new Gem(Vector2.Zero, gemTexture, Color.Yellow);
 			gems[4] = new Gem(Vector2.Zero, gemTexture, Color.Violet);
 			#endregion
+			#region Instantiate final fences
+			finalFences[0] = new ElectricFence(new Rectangle(319, 478, 349, 32), obTextures["fence"][0], Color.Cyan, 0);
+			finalFences[1] = new ElectricFence(new Rectangle(319, 527, 349, 32), obTextures["fence"][0], Color.Lime, 1);
+			finalFences[2] = new ElectricFence(new Rectangle(319, 576, 349, 32), obTextures["fence"][0], Color.Red, 2);
+			finalFences[3] = new ElectricFence(new Rectangle(319, 625, 349, 32), obTextures["fence"][0], Color.Yellow, 3);
+			finalFences[4] = new ElectricFence(new Rectangle(319, 674, 349, 32), obTextures["fence"][0], Color.Violet, 4);
+			#endregion
 
-			// Set up starting level
 			StreamReader sr = new StreamReader("Content/levels/11-0.txt");
 			levels[11, 0] = new Level(sr, new Vector2(11, 0), Level.Type.Canyons, Content.Load<Texture2D>("backdrops/canyons"), levelTextureHandler.Load<Texture2D>("foregrounds/11-0"), cats, gems, obTextures);
 			sr.Close();
@@ -399,10 +447,9 @@ namespace Cat_Planet_2
 			LoadLevels();
 
 			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, 459));
-			currentSong = canyonSong;
 			MediaPlayer.Volume = 0.85f;
 			MediaPlayer.IsRepeating = true;
-			MediaPlayer.Play(currentSong);
+			ChangeSong();
 		}
 		
 		protected override void UnloadContent()
@@ -411,7 +458,6 @@ namespace Cat_Planet_2
 
 		protected override void Update(GameTime gameTime)
 		{
-			// Exit when pressing Escape
 			if (Keyboard.GetState().IsKeyDown(Keys.Escape))
 				this.Exit();
 
@@ -429,7 +475,6 @@ namespace Cat_Planet_2
 				#endregion
 
 				#region Update collectables
-				// Check cat collisions
 				foreach (Cat c in currentLevel.cats)
 				{
 					if (angel.hitBox.Intersects(c.hitBox) && !c.hit)
@@ -441,27 +486,30 @@ namespace Cat_Planet_2
 					c.Update();
 				}
 
-				// Check gem collisions
 				if (currentLevel.gem != null)
 				{
 					if (angel.hitBox.Intersects(currentLevel.gem.hitBox) && !currentLevel.gem.taken)
 					{
 						currentLevel.gem.taken = true;
-						// TODO: Play sound
+						// Play get gem sound
+						foreach (ElectricFence e in finalFences)
+							if (e.color == currentLevel.gem.color)
+							{
+								e.isDeadly = false;
+								break;
+							}
 						gemExplosion = new Explosion(new Vector2(currentLevel.gem.hitBox.X, currentLevel.gem.hitBox.Y), currentLevel.gem.color, explosionTexture);
 					}
 					currentLevel.gem.Update();
 				}
 				#endregion
 
-				// Update explosions
 				if (deathExplosion != null)
 					deathExplosion.Update();
 				if (gemExplosion != null)
 					gemExplosion.Update();
 
 				#region Update obstacles
-				// Check obstacle collisions
 				bool check = true;
 				foreach (DeathWall o in currentLevel.deathWalls)
 				{
@@ -497,6 +545,22 @@ namespace Cat_Planet_2
 						}
 					}
 				}
+				if (currentLevel.coordinates.X == 0 && currentLevel.coordinates.Y == 10)
+					foreach (ElectricFence e in finalFences)
+					{
+						e.Update();
+						if (e.index < currentLevel.timers.Count)
+							e.isDeadly = !currentLevel.timers[e.index].activated;
+						if (e.hitBox.Intersects(angel.hitBox))
+						{
+							if (e.isDeadly)
+							{
+								KillAngel();
+								check = false;
+								break;
+							}
+						}
+					}
 				foreach (SpinningPlasma o in currentLevel.plasmas)
 				{
 					o.Update();
@@ -513,9 +577,8 @@ namespace Cat_Planet_2
 						r.explosion.Update();
 					if (r.Update(angel, currentLevel.walls, currentLevel.links, rocketLaunch))
 					{
-						//gemExplosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
 						r.explosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
-						//Play explosion sound
+						//TODO: Play explosion sound
 						if (angel.hitBox.Intersects(r.rocket.hitBox))
 						{
 							KillAngel();
@@ -538,15 +601,32 @@ namespace Cat_Planet_2
 							angel.motion += Vector2.Normalize(b.motion) * b.motion.Length() / 10;
 					}
 				}
+				foreach (Starfish s in currentLevel.starfish)
+				{
+					s.Update(currentLevel.walls, currentLevel.links);
+					if (s.hitBox.Intersects(angel.hitBox))
+					{
+						KillAngel();
+						check = false;
+						break;
+					}
+				}
 				#endregion
 
 				#region Update timers and buttons
+				bool oneisticking = false;
 				foreach (Timer t in currentLevel.timers)
 				{
 					t.Update(currentLevel);
+					if (t.activated && !t.loop)
+					{
+						loopTick.Play();
+						oneisticking = true;
+					}
 				}
+				if (!oneisticking)
+					loopTick.Stop();
 
-				// Check button and timer status
 				for (int i = 0; i < currentLevel.buttons.Count; i++)
 				{
 					if (angel.hitBox.Intersects(currentLevel.buttons[i].hitBox))
@@ -558,7 +638,6 @@ namespace Cat_Planet_2
 				#endregion
 
 				#region Check links
-				// Check level link collisions
 				if (check)
 				{
 					foreach (Link l in currentLevel.links)
@@ -585,15 +664,14 @@ namespace Cat_Planet_2
 							}
 							else
 							{
-								// If no levels is found, end game or kill angel
-								// Delete this out when finished with game //
+								// Delete this out after making end game trigger //
 								if (goTime)
 								{
 									endGame = true;
 									break;
 								}
 								else
-								/////////////////////////////////////////////
+								///////////////////////////////////////////////////
 								{
 									KillAngel();
 								}
@@ -610,20 +688,17 @@ namespace Cat_Planet_2
 				}
 				#endregion
 
-				// Update HUD count
 				HUDCat.hit = false;
 				HUDCat.Update();
 			}
 			else
 			{
-				// Take final time when game is over
 				if (goTime)
 				{
 					seconds = gameTime.TotalGameTime;
 					goTime = false;
 				}
 
-				// Show credits until finished scrolling
 				if (creditPosition.Y < -800)
 				{
 					endGame = false;
@@ -638,7 +713,7 @@ namespace Cat_Planet_2
 		private void KillAngel()
 		{
 			deathExplosion = new Explosion(new Vector2(angel.hitBox.X + 8, angel.hitBox.Y + 8), Color.White, explosionTexture);
-			// TODO: Play sound
+			// Play die sound
 			angel.position = currentLevel.restartPosition[previousLevel.coordinates];
 			angel.motion = Vector2.Zero;
 			deaths++;
@@ -771,8 +846,13 @@ namespace Cat_Planet_2
 						w.Draw(pixel, spriteBatch);
 				foreach (ElectricFence e in currentLevel.fences)
 					e.Draw(spriteBatch);
+				if (currentLevel.coordinates.X == 0 && currentLevel.coordinates.Y == 10)
+					foreach (ElectricFence e in finalFences)
+						e.Draw(spriteBatch);
 				foreach (SpinningPlasma p in currentLevel.plasmas)
 					p.Draw(spriteBatch);
+				foreach (Starfish s in currentLevel.starfish)
+					s.Draw(spriteBatch);
 				foreach (Bubbles b in currentLevel.bubbles)
 					b.Draw(spriteBatch);
 				foreach (Cat c in currentLevel.cats)
@@ -794,9 +874,11 @@ namespace Cat_Planet_2
 					"               CREDITS\n\n" + 
 					"Programming Graphics Music Design Everything\n" + 
 					"              Tad Cordle\n\n" + 
+//					"  Except Final Music's tune. That was by\n" +
+//					"              Alan Kahn\n\n" +
 					"              Tools Used\n" +
 					"       XNA 4.0 for Visual Studio 2010\n" +
-					"              Sibelius 6\n" + 
+					"              Sibelius 7\n" + 
 					"              Flash CS5\n\n" +
 					"       Sound Effects from flashkit.com\n\n" + 
 					"            Special Thanks\n" +

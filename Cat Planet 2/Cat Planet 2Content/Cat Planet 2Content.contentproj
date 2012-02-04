@@ -266,12 +266,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="levels\levels.txt">
-      <Name>levels</Name>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="foregrounds\10-1.png">
       <Name>10-1</Name>
       <Importer>TextureImporter</Importer>
@@ -1036,6 +1030,202 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Name>3-6</Name>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="objects\starfish.png">
+      <Name>starfish</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\1-7.png">
+      <Name>1-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\1-7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>1-7</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\2-7.png">
+      <Name>2-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\2-7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>2-7</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\2-8.png">
+      <Name>2-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\2-8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>2-8</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\1-8.png">
+      <Name>1-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\1-8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>1-8</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\1-9.png">
+      <Name>1-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\1-9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>1-9</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\0-9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>0-9</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\0-9.png">
+      <Name>0-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\2-9.png">
+      <Name>2-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\2-9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>2-9</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\2-10.png">
+      <Name>2-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\2-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>2-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\1-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>1-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\1-10.png">
+      <Name>1-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\0-10.png">
+      <Name>0-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\0-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>0-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ticking.wav">
+      <Name>ticking</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\3-10.png">
+      <Name>3-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\3-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>3-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\3-9.png">
+      <Name>3-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\3-9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>3-9</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\4-9.png">
+      <Name>4-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\4-9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>4-9</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\4-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>4-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\4-10.png">
+      <Name>4-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

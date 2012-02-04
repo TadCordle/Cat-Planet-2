@@ -25,6 +25,7 @@ namespace Cat_Planet_2
 		public List<SpinningPlasma> plasmas;
 		public List<RocketLauncher> launchers;
 		public List<Bubbles> bubbles;
+		public List<Starfish> starfish;
 		public Dictionary<Vector2, Vector2> restartPosition;
 		public Dictionary<string, Color> colors;
 		public Texture2D back, fore;
@@ -43,6 +44,7 @@ namespace Cat_Planet_2
 			plasmas = new List<SpinningPlasma>();
 			launchers = new List<RocketLauncher>();
 			bubbles = new List<Bubbles>();
+			starfish = new List<Starfish>();
 
 			colors = new Dictionary<string, Color>();
 			colors.Add("red", Color.Red);
@@ -59,6 +61,7 @@ namespace Cat_Planet_2
 			 * # #				Specifies the coordinates of the board in the world
 			 * restart [#ofpositions lfromx lfromy x y lfromx lfromy x y... etc]
 			 * wall [posx posy width heigh]
+			 * obstaclewall [posx posy width height]
 			 * cat [posx posy index]
 			 * gem [posx posy index]
 			 * link [posx posy width height leveltox leveltoy flipx? flipy?]
@@ -69,6 +72,8 @@ namespace Cat_Planet_2
 			 * timer [posx posy index time loop?] // make radius in multiples of 3
 			 * plasma [posx posy radius counterclockwise?]
 			 * launcher [posx posy]
+			 * bubbles [posx posy width height speedx speedy]
+			 * starfish [posx posy speedx speedy]
 			 * !				Denotes end of board
 			 **************************************************************************************************/
 
@@ -140,6 +145,10 @@ namespace Cat_Planet_2
 					else if (splitLine[0] == "bubbles")
 					{
 						bubbles.Add(new Bubbles(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), int.Parse(splitLine[3]), int.Parse(splitLine[4])), new Vector2(int.Parse(splitLine[5]), int.Parse(splitLine[6])), obTextures["bubble"][0]));
+					}
+					else if (splitLine[0] == "starfish")
+					{
+						starfish.Add(new Starfish(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 64, 64), new Vector2(int.Parse(splitLine[3]), int.Parse(splitLine[4])), obTextures["starfish"][0]));
 					}
 				}
 			}

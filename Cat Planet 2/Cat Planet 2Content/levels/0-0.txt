@@ -1,8 +1,9 @@
 warzone
 restart 1 10 0 480 480
 wall 300 600 250 70
-bubbles 0 360 960 360 0 -4
-fence 0 0 960 32 red 0
-fence 0 0 32 720 lime 1
-fence 928 0 32 720 yellow 2
-fence 0 688 960 32 cyan 3
+wall 0 0 32 720
+wall 0 0 960 32
+wall 0 696 960 32
+wall 928 0 32 720
+starfish 100 100 3 8
+starfish 200 200 -4 5

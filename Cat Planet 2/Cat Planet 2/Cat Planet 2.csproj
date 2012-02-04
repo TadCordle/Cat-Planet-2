@@ -141,6 +141,7 @@
     <Compile Include="MainGame.cs" />
     <Compile Include="DeathWall.cs" />
     <Compile Include="SpinningPlasma.cs" />
+    <Compile Include="Starfish.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="Wall.cs" />
   </ItemGroup>
