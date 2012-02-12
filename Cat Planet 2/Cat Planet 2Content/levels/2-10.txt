@@ -10,7 +10,7 @@ obstaclewall 864 490 26 175
 starfish 422 235 2 4
 starfish 474 527 -6 -3
 starfish 745 135 -5 -7
-starfish 714 430 4 8
+starfish 714 430 4 -8
 cat 644 299 59
 link 44 -59 331 28 2 9 0 1
 link -68 462 33 244 1 10 1 0

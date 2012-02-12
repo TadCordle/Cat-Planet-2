@@ -8,15 +8,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Cat_Planet_2
 {
-	class Rocket : Obstacle
+	class Rocket
 	{
+		public Rectangle hitBox;
+		public bool isDeadly;
 		public Vector2 position;
 		Vector2 motion;
 		public float angle;
 		Texture2D texture;
 		Texture2D trailTexture;
-		List<TrailPiece> trail;
-		private class TrailPiece
+		public List<TrailPiece> trail;
+		public class TrailPiece
 		{
 			int aliveTime;
 			Vector2 position;
@@ -44,8 +46,9 @@ namespace Cat_Planet_2
 		}
 
 		public Rocket(Rectangle hitBox, float angle, Texture2D texture, Texture2D trailTexture)
-			: base(hitBox)
 		{
+			isDeadly = true;
+			this.hitBox = hitBox;
 			this.trailTexture = trailTexture;
 			this.position = new Vector2(hitBox.X, hitBox.Y);
 			this.texture = texture;
@@ -54,10 +57,6 @@ namespace Cat_Planet_2
 			trail = new List<TrailPiece>();
 			for (int i = 0; i < 10; i++)
 				trail.Add(new TrailPiece(10 - i, this.position, trailTexture));
-		}
-
-		public override void Update()
-		{
 		}
 
 		public bool Update(Angel angel, List<Wall> walls, List<Link> links)
@@ -108,7 +107,7 @@ namespace Cat_Planet_2
 			return false;
 		}
 
-		public override void Draw(SpriteBatch sb)
+		public void Draw(SpriteBatch sb)
 		{
 			foreach (TrailPiece t in trail)
 				t.Draw(sb);

@@ -128,10 +128,10 @@
     <Compile Include="ElectricFence.cs" />
     <Compile Include="Explosion.cs" />
     <Compile Include="FallingRock.cs" />
+    <Compile Include="Fish.cs" />
     <Compile Include="Gem.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Link.cs" />
-    <Compile Include="Obstacle.cs" />
     <Compile Include="ObstacleWall.cs" />
     <Compile Include="Rocket.cs" />
     <Compile Include="RocketLauncher.cs" />

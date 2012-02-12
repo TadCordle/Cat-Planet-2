@@ -8,8 +8,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Cat_Planet_2
 {
-	class SpinningPlasma : Obstacle
+	class SpinningPlasma
 	{
+		public Rectangle hitBox;
+		public bool isDeadly;
 		bool counterClockwise;
 		float radius;
 		float time;
@@ -17,8 +19,9 @@ namespace Cat_Planet_2
 		Vector2 position;
 
 		public SpinningPlasma(Rectangle hitBox, float radius, float startTime, bool counterCLockwise, AnimatedTexture texture)
-			: base(hitBox)
 		{
+			isDeadly = true;
+			this.hitBox = hitBox;
 			time = startTime;
 			radius *= 3.0f / 54.0f;
 			this.radius = radius;
@@ -27,7 +30,7 @@ namespace Cat_Planet_2
 			position = new Vector2(hitBox.X, hitBox.Y);
 		}
 
-		public override void Update()
+		public void Update()
 		{
 			time += 0.06f;
 			position.X += (float)(radius * Math.Cos(time)) * (counterClockwise ? -1 : 1);
@@ -38,7 +41,7 @@ namespace Cat_Planet_2
 			texture.Update();
 		}
 
-		public override void Draw(SpriteBatch sb)
+		public void Draw(SpriteBatch sb)
 		{
 			texture.Draw(sb, position, Color.White);
 		}

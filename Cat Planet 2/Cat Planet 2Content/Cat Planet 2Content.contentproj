@@ -1227,6 +1227,205 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="explosion.wav">
+      <Name>explosion</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="rocket launch.wav">
+      <Name>rocket launch</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="get gem.wav">
+      <Name>get gem</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="objects\fish 1.png">
+      <Name>fish 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="objects\fish 2.png">
+      <Name>fish 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="backdrops\final.jpg">
+      <Name>final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dead.wav">
+      <Name>dead</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="finalmus.mp3">
+      <Name>finalmus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\0-11.png">
+      <Name>0-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\0-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>0-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\1-11.png">
+      <Name>1-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\1-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>1-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\2-11.png">
+      <Name>2-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\2-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>2-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\3-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>3-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\4-11.png">
+      <Name>4-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\4-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>4-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\3-11.png">
+      <Name>3-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\5-11.png">
+      <Name>5-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\5-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>5-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\6-11.png">
+      <Name>6-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\6-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>6-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\7-11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>7-11</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\7-11.png">
+      <Name>7-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\7-10.png">
+      <Name>7-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\7-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>7-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\8-10.png">
+      <Name>8-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\8-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>8-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="levels\9-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>9-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="foregrounds\9-10.png">
+      <Name>9-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

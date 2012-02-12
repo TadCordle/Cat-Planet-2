@@ -118,12 +118,32 @@ Content\foregrounds\3-10.xnb
 Content\foregrounds\3-9.xnb
 Content\foregrounds\4-9.xnb
 Content\foregrounds\4-10.xnb
+Content\explosion.xnb
+Content\rocket launch.xnb
+Content\get gem.xnb
+Content\objects\fish 1.xnb
+Content\objects\fish 2.xnb
+Content\backdrops\final.xnb
+Content\foregrounds\0-11.xnb
+Content\foregrounds\1-11.xnb
+Content\foregrounds\2-11.xnb
+Content\foregrounds\4-11.xnb
+Content\foregrounds\3-11.xnb
+Content\foregrounds\5-11.xnb
+Content\foregrounds\6-11.xnb
+Content\foregrounds\7-11.xnb
+Content\foregrounds\7-10.xnb
+Content\dead.xnb
+Content\finalmus.xnb
+Content\foregrounds\8-10.xnb
+Content\foregrounds\9-10.xnb
 Content\canyonmus.wma
 Content\easter egg.wmv
 Content\cavemus.wma
 Content\labmus.wma
 Content\watermus.wma
 Content\warmus.wma
+Content\finalmus.wma
 Content\levels\0-0.txt
 Content\levels\10-0.txt
 Content\levels\10-1.txt
@@ -201,3 +221,14 @@ Content\levels\3-10.txt
 Content\levels\3-9.txt
 Content\levels\4-9.txt
 Content\levels\4-10.txt
+Content\levels\0-11.txt
+Content\levels\1-11.txt
+Content\levels\2-11.txt
+Content\levels\3-11.txt
+Content\levels\4-11.txt
+Content\levels\5-11.txt
+Content\levels\6-11.txt
+Content\levels\7-11.txt
+Content\levels\7-10.txt
+Content\levels\8-10.txt
+Content\levels\9-10.txt

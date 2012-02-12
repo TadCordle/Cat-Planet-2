@@ -43,6 +43,7 @@ namespace Cat_Planet_2
 		// Sounds
 		SoundEffect hitWall;
 		SoundEffect flap;
+		SoundEffect die;
 		SoundEffect meow;
 		SoundEffect explode;
 		SoundEffect getGem;
@@ -102,7 +103,7 @@ namespace Cat_Planet_2
 			obTextures = new Dictionary<string, Texture2D[]>();
 
 			levels = new Level[12, 12];
-			cats = new Cat[80];
+			cats = new Cat[68];
 			gems = new Gem[5];
 			finalFences = new ElectricFence[5];
 
@@ -182,28 +183,31 @@ namespace Cat_Planet_2
 			Texture2D[] starTexture = new Texture2D[1];
 			starTexture[0] = Content.Load<Texture2D>("objects/starfish");
 			obTextures.Add("starfish", starTexture);
+			Texture2D[] fishTexture = new Texture2D[2];
+			fishTexture[0] = Content.Load<Texture2D>("objects/fish 1");
+			fishTexture[1] = Content.Load<Texture2D>("objects/fish 2");
+			obTextures.Add("fish", fishTexture);
 			#endregion
 			#region Load music
-			// Load sounds and music
 			canyonSong = Content.Load<Song>("canyonmus");
 			caveSong = Content.Load<Song>("cavemus");
 			labSong = Content.Load<Song>("labmus");
 			warSong = Content.Load<Song>("warmus");
 			waterSong = Content.Load<Song>("watermus");
-			//finalSong = Content.Load<Song>("finalmus");
+			finalSong = Content.Load<Song>("finalmus");
 			#endregion
 			#region Load sounds
 			hitWall = Content.Load<SoundEffect>("thump");
 			flap = Content.Load<SoundEffect>("whoosh");
 			meow = Content.Load<SoundEffect>("meow");
-			//explode = Content.Load<SoundEffect>("explode");
-			//die = Content.Load<SoundEffect>("die");
-			//getGem = Content.Load<SoundEffect>("getgem");
+			explode = Content.Load<SoundEffect>("explosion");
+			die = Content.Load<SoundEffect>("dead");
+			getGem = Content.Load<SoundEffect>("get gem");
 			ticking = Content.Load<SoundEffect>("ticking");
 			loopTick = ticking.CreateInstance();
 			loopTick.IsLooped = true;
 			loopTick.Volume = 0.25f;
-			//rocketLaunch = Content.Load<SoundEffect>("rocketlaunch");
+			rocketLaunch = Content.Load<SoundEffect>("rocket launch");
 			#endregion
 			#region Load easter egg
 			easterEgg = Content.Load<Video>("easter egg");
@@ -270,7 +274,7 @@ namespace Cat_Planet_2
 				"Did you get the gem?",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			cats[18] = new Cat(Vector2.Zero, 18,
-				"Cat planet everything!",
+				"I wasn't in the first game!",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			cats[19] = new Cat(Vector2.Zero, 19,
 				"The fish are evil!",
@@ -416,6 +420,24 @@ namespace Cat_Planet_2
 				"  Do you have 62 cats?\n" +
 				"There's no turning back.",
 				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[62] = new Cat(Vector2.Zero, 62,
+				"It's the fish!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[63] = new Cat(Vector2.Zero, 63,
+				"The fish are dangerous!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[64] = new Cat(Vector2.Zero, 64,
+				"Keep going!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[65] = new Cat(Vector2.Zero, 65,
+				"You're getting close!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[66] = new Cat(Vector2.Zero, 66,
+				"You have to go up!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
+			cats[67] = new Cat(Vector2.Zero, 67,
+				"You did it!",
+				new AnimatedTexture(catNormalTexture, 4, false), new AnimatedTexture(catHitTexture, 4, false), font);
 			#endregion
 			#region Instantiate gems
 			gems[0] = new Gem(Vector2.Zero, gemTexture, Color.Cyan);
@@ -438,15 +460,25 @@ namespace Cat_Planet_2
 			sr = new StreamReader("Content/levels/10-0.txt");
 			levels[10, 0] = new Level(sr, new Vector2(10, 0), Level.Type.Canyons, Content.Load<Texture2D>("backdrops/canyons"), levelTextureHandler.Load<Texture2D>("foregrounds/10-0"), cats, gems, obTextures);
 			sr.Close();
-			sr = new StreamReader("Content/levels/0-0.txt");
-			levels[0, 0] = new Level(sr, new Vector2(0, 0), Level.Type.WarZone, Content.Load<Texture2D>("backdrops/warzone"), levelTextureHandler.Load<Texture2D>("pixel"), cats, gems, obTextures);
+			sr = new StreamReader("Content/levels/0-11.txt");
+			levels[0, 11] = new Level(sr, new Vector2(0, 11), Level.Type.Final, Content.Load<Texture2D>("backdrops/final"), levelTextureHandler.Load<Texture2D>("foregrounds/0-11"), cats, gems, obTextures);
 			sr.Close();
+			sr = new StreamReader("Content/levels/0-10.txt");
+			levels[0, 10] = new Level(sr, new Vector2(0, 10), Level.Type.UnderwaterTransition, Content.Load<Texture2D>("backdrops/underwater transition"), levelTextureHandler.Load<Texture2D>("foregrounds/0-10"), cats, gems, obTextures);
+			sr.Close();
+			sr = new StreamReader("Content/levels/0-0.txt");
+			levels[0, 0] = new Level(sr, new Vector2(0, 0), Level.Type.Final, Content.Load<Texture2D>("backdrops/final"), levelTextureHandler.Load<Texture2D>("pixel"), cats, gems, obTextures);
+			sr.Close();
+			sr.Dispose();
 
-			currentLevel = levels[11, 0]; // Start = 11, 0
-			previousLevel = levels[10, 0];
+			//currentLevel = levels[11, 0]; // Start
+			currentLevel = levels[0, 11]; // Fish lair tests
+			//currentLevel = levels[0, 0]; // New objects test
+			//previousLevel = levels[10, 0]; // Start/New objects tests
+			previousLevel = levels[0, 10]; // Fish lair tests
 			LoadLevels();
 
-			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, 459));
+			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, 459) /*new Vector2(482, 214)*/);
 			MediaPlayer.Volume = 0.85f;
 			MediaPlayer.IsRepeating = true;
 			ChangeSong();
@@ -481,6 +513,12 @@ namespace Cat_Planet_2
 					{
 						c.hit = true;
 						catCount++;
+						if (currentLevel == levels[9, 10])
+							if (goTime)
+							{
+								endGame = true;
+								break;
+							}
 						meow.Play(0.4F, 0.0F, 0.0F);
 					}
 					c.Update();
@@ -491,7 +529,7 @@ namespace Cat_Planet_2
 					if (angel.hitBox.Intersects(currentLevel.gem.hitBox) && !currentLevel.gem.taken)
 					{
 						currentLevel.gem.taken = true;
-						// Play get gem sound
+						getGem.Play();
 						foreach (ElectricFence e in finalFences)
 							if (e.color == currentLevel.gem.color)
 							{
@@ -517,7 +555,7 @@ namespace Cat_Planet_2
 					{
 						KillAngel();
 						check = false;
-						break;
+						continue;
 					}
 				}
 				foreach (FallingRock o in currentLevel.rocks)
@@ -527,7 +565,7 @@ namespace Cat_Planet_2
 					{
 						KillAngel();
 						check = false;
-						break;
+						continue;
 					}
 				}
 				foreach (ElectricFence e in currentLevel.fences)
@@ -541,7 +579,7 @@ namespace Cat_Planet_2
 						{
 							KillAngel();
 							check = false;
-							break;
+							continue;
 						}
 					}
 				}
@@ -557,7 +595,7 @@ namespace Cat_Planet_2
 							{
 								KillAngel();
 								check = false;
-								break;
+								continue;
 							}
 						}
 					}
@@ -568,7 +606,7 @@ namespace Cat_Planet_2
 					{
 						KillAngel();
 						check = false;
-						break;
+						continue;
 					}
 				}
 				foreach (RocketLauncher r in currentLevel.launchers)
@@ -578,7 +616,7 @@ namespace Cat_Planet_2
 					if (r.Update(angel, currentLevel.walls, currentLevel.links, rocketLaunch))
 					{
 						r.explosion = new Explosion(new Vector2(r.rocket.hitBox.X, r.rocket.hitBox.Y), Color.OrangeRed, explosionTexture);
-						//TODO: Play explosion sound
+						explode.Play(0.5f, 0.0f, 0.0f);
 						if (angel.hitBox.Intersects(r.rocket.hitBox))
 						{
 							KillAngel();
@@ -608,7 +646,17 @@ namespace Cat_Planet_2
 					{
 						KillAngel();
 						check = false;
-						break;
+						continue;
+					}
+				}
+				foreach (Fish s in currentLevel.fish)
+				{
+					s.Update(angel, currentLevel.walls, currentLevel.fish);
+					if (s.hitBox.Intersects(angel.hitBox))
+					{
+						KillAngel();
+						check = false;
+						continue;
 					}
 				}
 				#endregion
@@ -658,26 +706,26 @@ namespace Cat_Planet_2
 								gemExplosion = null;
 								deathExplosion = null;
 								foreach (RocketLauncher r in currentLevel.launchers)
+								{
 									r.explosion = null;
+									r.rocket.position = new Vector2(-10000, -10000);
+									r.pause = 0;
+									r.rocket.trail.RemoveRange(0, r.rocket.trail.Count);
+								}
+								foreach (Fish f in currentLevel.fish)
+								{
+									f.position = f.startPosition;
+									f.motion = Vector2.Zero;
+								}
 								if (previousLevel.type != currentLevel.type)
 									ChangeSong();
 							}
 							else
 							{
-								// Delete this out after making end game trigger //
-								if (goTime)
-								{
-									endGame = true;
-									break;
-								}
-								else
-								///////////////////////////////////////////////////
-								{
-									KillAngel();
-								}
+								KillAngel();
+								break;
 							}
 
-							// Update angel position after switching levels
 							if (l.flipx)
 								angel.position.X = (angel.position.X < windowWidth / 2 ? windowWidth - 56 : -16);
 							if (l.flipy)
@@ -700,10 +748,7 @@ namespace Cat_Planet_2
 				}
 
 				if (creditPosition.Y < -800)
-				{
 					endGame = false;
-					KillAngel();
-				}
 				else
 					creditPosition.Y -= 4;
 			}
@@ -713,7 +758,7 @@ namespace Cat_Planet_2
 		private void KillAngel()
 		{
 			deathExplosion = new Explosion(new Vector2(angel.hitBox.X + 8, angel.hitBox.Y + 8), Color.White, explosionTexture);
-			// Play die sound
+			die.Play();
 			angel.position = currentLevel.restartPosition[previousLevel.coordinates];
 			angel.motion = Vector2.Zero;
 			deaths++;
@@ -769,10 +814,8 @@ namespace Cat_Planet_2
 				for (int j = -1; j <= 1; j++)
 					if (i != 0 || j != 0)
 					{
-						if (currentLevel.coordinates.X + i >= levels.GetLength(0) || currentLevel.coordinates.Y + j >= levels.GetLength(1) ||
-							currentLevel.coordinates.X + i < 0 || currentLevel.coordinates.Y + j < 0)
-							continue;
-						if (levels[(int)currentLevel.coordinates.X + i, (int)currentLevel.coordinates.Y + j] != null)
+						if ((currentLevel.coordinates.X + i >= levels.GetLength(0) || currentLevel.coordinates.Y + j >= levels.GetLength(1) ||
+							currentLevel.coordinates.X + i < 0 || currentLevel.coordinates.Y + j < 0) || levels[(int)currentLevel.coordinates.X + i, (int)currentLevel.coordinates.Y + j] != null)
 							continue;
 
 						if (File.Exists("Content/levels/" + ((int)currentLevel.coordinates.X + i).ToString() + "-" + ((int)currentLevel.coordinates.Y + j).ToString() + ".txt"))
@@ -830,8 +873,8 @@ namespace Cat_Planet_2
 				foreach (Timer t in currentLevel.timers)
 					t.Draw(spriteBatch);
 				angel.Draw(spriteBatch);
-				foreach (DeathWall o in currentLevel.deathWalls)
-					o.Draw(spriteBatch);
+				foreach (Fish f in currentLevel.fish)
+					f.Draw(spriteBatch);
 				foreach (FallingRock o in currentLevel.rocks)
 					o.Draw(spriteBatch);
 				foreach (RocketLauncher r in currentLevel.launchers)
@@ -874,8 +917,8 @@ namespace Cat_Planet_2
 					"               CREDITS\n\n" + 
 					"Programming Graphics Music Design Everything\n" + 
 					"              Tad Cordle\n\n" + 
-//					"  Except Final Music's tune. That was by\n" +
-//					"              Alan Kahn\n\n" +
+					"Except Fish Lair's Music's tune. That was by\n" +
+					"              Alan Kahn\n\n" +
 					"              Tools Used\n" +
 					"       XNA 4.0 for Visual Studio 2010\n" +
 					"              Sibelius 7\n" + 

@@ -8,18 +8,15 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Cat_Planet_2
 {
-	class DeathWall : Obstacle
+	class DeathWall
 	{
-		public DeathWall(Rectangle hitBox) : base(hitBox)
-		{
-		}
+		public bool isDeadly;
+		public Rectangle hitBox;
 
-		public override void Update()
+		public DeathWall(Rectangle hitBox)
 		{
-		}
-
-		public override void Draw(SpriteBatch sb)
-		{
+			isDeadly = true;
+			this.hitBox = hitBox;
 		}
 	}
 }

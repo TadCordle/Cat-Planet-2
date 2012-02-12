@@ -83,7 +83,7 @@ namespace Cat_Planet_2
 						motion.Y *= -1;
 						motion.Y -= motion.Y / 3F;
 						if (Math.Abs(motion.Y) > 1)
-							hitWall.Play(0.2F, 0.0F, 0.0F);
+							hitWall.Play(1.0F, 0.0F, 0.0F);
 					}
 
 					if (this.hitBox.Top < w.hitBox.Bottom && this.hitBox.Bottom > w.hitBox.Top)
@@ -95,7 +95,7 @@ namespace Cat_Planet_2
 						motion.X *= -1;
 						motion.X -= motion.X / 3F;
 						if (Math.Abs(motion.X) > 1)
-							hitWall.Play(0.2F, 0.0F, 0.0F);
+							hitWall.Play(1.0F, 0.0F, 0.0F);
 					}
 				}
 			}

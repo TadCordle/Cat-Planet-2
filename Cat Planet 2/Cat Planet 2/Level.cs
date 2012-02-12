@@ -26,6 +26,7 @@ namespace Cat_Planet_2
 		public List<RocketLauncher> launchers;
 		public List<Bubbles> bubbles;
 		public List<Starfish> starfish;
+		public List<Fish> fish;
 		public Dictionary<Vector2, Vector2> restartPosition;
 		public Dictionary<string, Color> colors;
 		public Texture2D back, fore;
@@ -45,6 +46,7 @@ namespace Cat_Planet_2
 			launchers = new List<RocketLauncher>();
 			bubbles = new List<Bubbles>();
 			starfish = new List<Starfish>();
+			fish = new List<Fish>();
 
 			colors = new Dictionary<string, Color>();
 			colors.Add("red", Color.Red);
@@ -74,6 +76,7 @@ namespace Cat_Planet_2
 			 * launcher [posx posy]
 			 * bubbles [posx posy width height speedx speedy]
 			 * starfish [posx posy speedx speedy]
+			 * fish [posx posy]
 			 * !				Denotes end of board
 			 **************************************************************************************************/
 
@@ -149,6 +152,10 @@ namespace Cat_Planet_2
 					else if (splitLine[0] == "starfish")
 					{
 						starfish.Add(new Starfish(new Rectangle(int.Parse(splitLine[1]), int.Parse(splitLine[2]), 64, 64), new Vector2(int.Parse(splitLine[3]), int.Parse(splitLine[4])), obTextures["starfish"][0]));
+					}
+					else if (splitLine[0] == "fish")
+					{
+						fish.Add(new Fish(new Vector2(int.Parse(splitLine[1]), int.Parse(splitLine[2])), new AnimatedTexture(obTextures["fish"], 10, false)));
 					}
 				}
 			}

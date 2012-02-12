@@ -8,8 +8,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Cat_Planet_2
 {
-	class ElectricFence : Obstacle
+	class ElectricFence
 	{
+		public bool isDeadly;
+		public Rectangle hitBox;
+
 		Vector2[] points;
 		bool horizontal;
 		Random generator;
@@ -18,8 +21,10 @@ namespace Cat_Planet_2
 
 		public int index;
 
-		public ElectricFence(Rectangle hitBox, Texture2D texture, Color color, int index) : base(hitBox)
+		public ElectricFence(Rectangle hitBox, Texture2D texture, Color color, int index)
 		{
+			isDeadly = true;
+			this.hitBox = hitBox;
 			if (hitBox.Width > hitBox.Height)
 			{
 				points = new Vector2[hitBox.Width / 32];
@@ -36,7 +41,7 @@ namespace Cat_Planet_2
 			this.color = color;
 		}
 
-		public override void Update()
+		public void Update()
 		{
 			int x = hitBox.X + 16;
 			int y = hitBox.Y + 16;
@@ -57,7 +62,7 @@ namespace Cat_Planet_2
 			}
 		}
 
-		public override void Draw(SpriteBatch sb)
+		public void Draw(SpriteBatch sb)
 		{
 			if (isDeadly)
 				Shapes.DrawLines(sb, points, texture, color);
