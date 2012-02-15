@@ -1401,6 +1401,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="levels\8-10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>8-10</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="foregrounds\8-10.png">
       <Name>8-10</Name>
       <Importer>TextureImporter</Importer>
@@ -1408,22 +1414,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="levels\8-10.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Name>8-10</Name>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="levels\9-10.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Name>9-10</Name>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="foregrounds\9-10.png">
-      <Name>9-10</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+    <Compile Include="credits.wav">
+      <Name>credits</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

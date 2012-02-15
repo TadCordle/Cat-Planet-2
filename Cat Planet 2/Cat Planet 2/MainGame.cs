@@ -50,6 +50,7 @@ namespace Cat_Planet_2
 		SoundEffect ticking;
 		SoundEffectInstance loopTick;
 		SoundEffect rocketLaunch;
+		SoundEffect creditsMus;
 
 		// Music
 		Song currentSong;
@@ -208,6 +209,7 @@ namespace Cat_Planet_2
 			loopTick.IsLooped = true;
 			loopTick.Volume = 0.25f;
 			rocketLaunch = Content.Load<SoundEffect>("rocket launch");
+			creditsMus = Content.Load<SoundEffect>("credits");
 			#endregion
 			#region Load easter egg
 			easterEgg = Content.Load<Video>("easter egg");
@@ -460,25 +462,16 @@ namespace Cat_Planet_2
 			sr = new StreamReader("Content/levels/10-0.txt");
 			levels[10, 0] = new Level(sr, new Vector2(10, 0), Level.Type.Canyons, Content.Load<Texture2D>("backdrops/canyons"), levelTextureHandler.Load<Texture2D>("foregrounds/10-0"), cats, gems, obTextures);
 			sr.Close();
-			sr = new StreamReader("Content/levels/0-11.txt");
-			levels[0, 11] = new Level(sr, new Vector2(0, 11), Level.Type.Final, Content.Load<Texture2D>("backdrops/final"), levelTextureHandler.Load<Texture2D>("foregrounds/0-11"), cats, gems, obTextures);
-			sr.Close();
-			sr = new StreamReader("Content/levels/0-10.txt");
-			levels[0, 10] = new Level(sr, new Vector2(0, 10), Level.Type.UnderwaterTransition, Content.Load<Texture2D>("backdrops/underwater transition"), levelTextureHandler.Load<Texture2D>("foregrounds/0-10"), cats, gems, obTextures);
-			sr.Close();
 			sr = new StreamReader("Content/levels/0-0.txt");
 			levels[0, 0] = new Level(sr, new Vector2(0, 0), Level.Type.Final, Content.Load<Texture2D>("backdrops/final"), levelTextureHandler.Load<Texture2D>("pixel"), cats, gems, obTextures);
 			sr.Close();
 			sr.Dispose();
 
-			//currentLevel = levels[11, 0]; // Start
-			currentLevel = levels[0, 11]; // Fish lair tests
-			//currentLevel = levels[0, 0]; // New objects test
-			//previousLevel = levels[10, 0]; // Start/New objects tests
-			previousLevel = levels[0, 10]; // Fish lair tests
+			currentLevel = levels[11, 0];
+			previousLevel = levels[10, 0];
 			LoadLevels();
 
-			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, 459) /*new Vector2(482, 214)*/);
+			angel = new Angel(angelNormalTexture, angelFlyTexture, hitWall, flap, new Vector2(windowWidth / 2, 459));
 			MediaPlayer.Volume = 0.85f;
 			MediaPlayer.IsRepeating = true;
 			ChangeSong();
@@ -513,9 +506,10 @@ namespace Cat_Planet_2
 					{
 						c.hit = true;
 						catCount++;
-						if (currentLevel == levels[9, 10])
+						if (currentLevel == levels[8, 10])
 							if (goTime)
 							{
+								creditsMus.Play();
 								endGame = true;
 								break;
 							}
@@ -717,7 +711,7 @@ namespace Cat_Planet_2
 									f.position = f.startPosition;
 									f.motion = Vector2.Zero;
 								}
-								if (previousLevel.type != currentLevel.type)
+								if (previousLevel.type != currentLevel.type || currentLevel == levels[8, 10] || previousLevel == levels[8, 10])
 									ChangeSong();
 							}
 							else
@@ -788,7 +782,10 @@ namespace Cat_Planet_2
 					currentSong = null;
 					break;
 				case Level.Type.Final:
-					currentSong = finalSong;
+					if (currentLevel == levels[8, 10])
+						currentSong = null;
+					else
+						currentSong = finalSong;
 					break;
 				case Level.Type.EasterEgg:
 					currentSong = null;
