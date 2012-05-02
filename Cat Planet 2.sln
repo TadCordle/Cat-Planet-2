@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cat Planet 2", "Cat Planet 2\Cat Planet 2\Cat Planet 2.csproj", "{07E7A44C-F564-45AC-B809-EC27325E4C59}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Cat Planet 2Content", "Cat Planet 2\Cat Planet 2Content\Cat Planet 2Content.contentproj", "{DFA818D3-D44B-49A8-A45E-839B34F2F2AC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,8 +13,6 @@ Global
 		{07E7A44C-F564-45AC-B809-EC27325E4C59}.Debug|x86.Build.0 = Debug|x86
 		{07E7A44C-F564-45AC-B809-EC27325E4C59}.Release|x86.ActiveCfg = Release|x86
 		{07E7A44C-F564-45AC-B809-EC27325E4C59}.Release|x86.Build.0 = Release|x86
-		{DFA818D3-D44B-49A8-A45E-839B34F2F2AC}.Debug|x86.ActiveCfg = Debug|x86
-		{DFA818D3-D44B-49A8-A45E-839B34F2F2AC}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
