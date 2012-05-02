@@ -1,0 +1,15 @@
+caves
+restart 2 8 3 196 590 8 5 196 590
+wall -20 -15 300 97
+wall -20 642 300 90
+wall 331 316 300 90
+wall 615 -18 369 129
+wall 615 645 369 86
+deathwall 49 81 19 578
+deathwall 64 79 211 18
+deathwall 330 403 296 21
+deathwall 612 109 296 20
+deathwall 888 119 23 534
+cat 452 276 14
+link 218 -60 453 29 8 3 0 1
+link 224 747 453 29 8 5 0 1

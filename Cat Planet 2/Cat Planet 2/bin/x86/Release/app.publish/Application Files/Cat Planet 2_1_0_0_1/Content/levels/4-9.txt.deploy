@@ -1,0 +1,12 @@
+underwater
+restart 3 3 9 74 423 4 10 433 610 4 8 437 42
+wall -22 -14 297 300
+wall -28 471 299 268
+wall 655 -19 340 764
+obstaclewall 275 157 379 27
+obstaclewall 249 189 28 379
+obstaclewall 275 553 379 29
+starfish 275 341 5 5
+link -69 267 33 229 3 9 1 0
+link 166 -64 578 28 4 8 0 1
+link 140 749 578 28 4 10 0 1

@@ -1,0 +1,7 @@
+caves
+restart 2 7 2 465 55 7 4 454 617
+deathwall 327 -14 25 737
+deathwall 609 -33 25 760
+gem 470 354 1
+link 269 -61 453 29 7 2 0 1
+link 273 741 453 29 7 4 0 1

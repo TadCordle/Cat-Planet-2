@@ -1,0 +1,1304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>angel\angel fly 3.png</Source>
+      <Name>angel\angel fly 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\angel\angel fly 3.xnb</Output>
+      <Time>2012-01-01T16:34:40.6853196-05:00</Time>
+    </Item>
+    <Item>
+      <Source>angel\angel fly 2.png</Source>
+      <Name>angel\angel fly 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\angel\angel fly 2.xnb</Output>
+      <Time>2012-01-01T16:35:21.8926765-05:00</Time>
+    </Item>
+    <Item>
+      <Source>angel\angel fly 1.png</Source>
+      <Name>angel\angel fly 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\angel\angel fly 1.xnb</Output>
+      <Time>2012-01-01T16:36:01.3689344-05:00</Time>
+    </Item>
+    <Item>
+      <Source>angel\angel normal 1.png</Source>
+      <Name>angel\angel normal 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\angel\angel normal 1.xnb</Output>
+      <Time>2012-01-01T15:50:23.1534097-05:00</Time>
+    </Item>
+    <Item>
+      <Source>angel\angel normal 2.png</Source>
+      <Name>angel\angel normal 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\angel\angel normal 2.xnb</Output>
+      <Time>2012-01-01T15:51:51.2664495-05:00</Time>
+    </Item>
+    <Item>
+      <Source>pixel.bmp</Source>
+      <Name>pixel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\pixel.xnb</Output>
+      <Time>2012-01-12T21:05:38.6302448-05:00</Time>
+    </Item>
+    <Item>
+      <Source>backdrops\canyons.jpg</Source>
+      <Name>backdrops\canyons</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\backdrops\canyons.xnb</Output>
+      <Time>2012-01-01T19:50:43.9708647-05:00</Time>
+    </Item>
+    <Item>
+      <Source>backdrops\caves.jpg</Source>
+      <Name>backdrops\caves</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\backdrops\caves.xnb</Output>
+      <Time>2012-01-01T19:50:44.0020647-05:00</Time>
+    </Item>
+    <Item>
+      <Source>backdrops\underwater transition.png</Source>
+      <Name>backdrops\underwater transition</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\backdrops\underwater transition.xnb</Output>
+      <Time>2012-01-01T19:05:22.5319421-05:00</Time>
+    </Item>
+    <Item>
+      <Source>backdrops\underwater.jpg</Source>
+      <Name>backdrops\underwater</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\backdrops\underwater.xnb</Output>
+      <Time>2012-01-01T19:50:44.3452653-05:00</Time>
+    </Item>
+    <Item>
+      <Source>backdrops\warzone.jpg</Source>
+      <Name>backdrops\warzone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\backdrops\warzone.xnb</Output>
+      <Time>2012-01-01T19:50:44.3608653-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\11-0.png</Source>
+      <Name>foregrounds\11-0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\11-0.xnb</Output>
+      <Time>2012-01-03T17:50:45.2534576-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat hit 1.png</Source>
+      <Name>cat\cat hit 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat hit 1.xnb</Output>
+      <Time>2012-01-02T10:08:30.9685753-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat hit 2.png</Source>
+      <Name>cat\cat hit 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat hit 2.xnb</Output>
+      <Time>2012-01-02T10:08:46.3559742-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat hit 3.png</Source>
+      <Name>cat\cat hit 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat hit 3.xnb</Output>
+      <Time>2012-01-02T10:08:55.0940503-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat normal 1.png</Source>
+      <Name>cat\cat normal 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat normal 1.xnb</Output>
+      <Time>2012-01-02T10:09:06.0582506-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat normal 2.png</Source>
+      <Name>cat\cat normal 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat normal 2.xnb</Output>
+      <Time>2012-01-02T10:09:15.6391745-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat normal 3.png</Source>
+      <Name>cat\cat normal 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat normal 3.xnb</Output>
+      <Time>2012-01-02T10:09:26.5108637-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat normal 4.png</Source>
+      <Name>cat\cat normal 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat normal 4.xnb</Output>
+      <Time>2012-01-02T09:59:48.0408769-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat hit 4.png</Source>
+      <Name>cat\cat hit 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat hit 4.xnb</Output>
+      <Time>2012-01-02T10:16:27.1660346-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cat\cat hit 5.png</Source>
+      <Name>cat\cat hit 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cat\cat hit 5.xnb</Output>
+      <Time>2012-01-02T10:18:07.3647656-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-4.png</Source>
+      <Name>foregrounds\6-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-4.xnb</Output>
+      <Time>2012-01-15T11:37:05.9482246-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\11-1.png</Source>
+      <Name>foregrounds\11-1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\11-1.xnb</Output>
+      <Time>2012-01-03T18:55:13.6857192-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\11-2.png</Source>
+      <Name>foregrounds\11-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\11-2.xnb</Output>
+      <Time>2012-01-04T19:31:16.5435408-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\11-3.png</Source>
+      <Name>foregrounds\11-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\11-3.xnb</Output>
+      <Time>2012-01-04T20:01:46.3832017-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\10-0.png</Source>
+      <Name>foregrounds\10-0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\10-0.xnb</Output>
+      <Time>2012-01-04T20:34:52.8042669-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-0.png</Source>
+      <Name>foregrounds\9-0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-0.xnb</Output>
+      <Time>2012-01-05T15:23:45.9497554-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-1.png</Source>
+      <Name>foregrounds\9-1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-1.xnb</Output>
+      <Time>2012-01-05T18:36:28.8199172-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\10-1.png</Source>
+      <Name>foregrounds\10-1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\10-1.xnb</Output>
+      <Time>2012-01-06T15:14:06.442133-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\10-2.png</Source>
+      <Name>foregrounds\10-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\10-2.xnb</Output>
+      <Time>2012-01-06T15:33:25.1024046-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-2.png</Source>
+      <Name>foregrounds\9-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-2.xnb</Output>
+      <Time>2012-01-07T16:55:40.6012774-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\10-3.png</Source>
+      <Name>foregrounds\10-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\10-3.xnb</Output>
+      <Time>2012-01-10T17:53:30.3810281-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-3.png</Source>
+      <Name>foregrounds\9-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-3.xnb</Output>
+      <Time>2012-01-10T20:33:34.8789273-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-4.png</Source>
+      <Name>foregrounds\9-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-4.xnb</Output>
+      <Time>2012-01-10T20:59:56.9537309-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\10-4.png</Source>
+      <Name>foregrounds\10-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\10-4.xnb</Output>
+      <Time>2012-01-10T21:17:19.0369057-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\11-4.png</Source>
+      <Name>foregrounds\11-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\11-4.xnb</Output>
+      <Time>2012-01-10T22:11:50.0023282-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\10-5.png</Source>
+      <Name>foregrounds\10-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\10-5.xnb</Output>
+      <Time>2012-01-11T20:50:51.2452961-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\test.png</Source>
+      <Name>foregrounds\test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\test.xnb</Output>
+      <Time>2012-01-06T15:33:25.1024046-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-5.png</Source>
+      <Name>foregrounds\9-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-5.xnb</Output>
+      <Time>2012-01-13T20:12:33.668652-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\8-5.png</Source>
+      <Name>foregrounds\8-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\8-5.xnb</Output>
+      <Time>2012-01-13T21:48:09.6491985-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\8-4.png</Source>
+      <Name>foregrounds\8-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\8-4.xnb</Output>
+      <Time>2012-01-14T12:31:55.4855955-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\8-3.png</Source>
+      <Name>foregrounds\8-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\8-3.xnb</Output>
+      <Time>2012-01-14T13:07:40.4398723-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\8-2.png</Source>
+      <Name>foregrounds\8-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\8-2.xnb</Output>
+      <Time>2012-01-14T16:24:30.6751657-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-2.png</Source>
+      <Name>foregrounds\7-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-2.xnb</Output>
+      <Time>2012-01-14T17:10:50.7366352-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-3.png</Source>
+      <Name>foregrounds\7-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-3.xnb</Output>
+      <Time>2012-01-14T17:48:54.471531-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-4.png</Source>
+      <Name>foregrounds\7-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-4.xnb</Output>
+      <Time>2012-01-15T09:38:26.7271105-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-5.png</Source>
+      <Name>foregrounds\6-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-5.xnb</Output>
+      <Time>2012-01-15T11:56:28.4647167-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-3.png</Source>
+      <Name>foregrounds\6-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-3.xnb</Output>
+      <Time>2012-01-15T15:24:31.3770615-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-2.png</Source>
+      <Name>foregrounds\6-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-2.xnb</Output>
+      <Time>2012-01-15T16:26:19.1700274-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-5.png</Source>
+      <Name>foregrounds\7-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-5.xnb</Output>
+      <Time>2012-01-15T17:22:49.7393016-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\button.png</Source>
+      <Name>objects\button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\button.xnb</Output>
+      <Time>2012-01-15T18:39:34.9467193-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\explosion particle.png</Source>
+      <Name>objects\explosion particle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\explosion particle.xnb</Output>
+      <Time>2012-01-11T18:04:56.8296692-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\gem.png</Source>
+      <Name>objects\gem</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\gem.xnb</Output>
+      <Time>2012-01-14T12:14:27.1436338-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\rock.png</Source>
+      <Name>objects\rock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\rock.xnb</Output>
+      <Time>2012-01-15T09:55:27.8314624-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\timer back.png</Source>
+      <Name>objects\timer back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\timer back.xnb</Output>
+      <Time>2012-01-21T17:07:54.8794631-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\timer front.png</Source>
+      <Name>objects\timer front</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\timer front.xnb</Output>
+      <Time>2012-01-15T18:45:01.9363001-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-6.png</Source>
+      <Name>foregrounds\7-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-6.xnb</Output>
+      <Time>2012-01-16T08:48:40.8554315-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\8-6.png</Source>
+      <Name>foregrounds\8-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\8-6.xnb</Output>
+      <Time>2012-01-16T09:30:59.1996455-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-6.png</Source>
+      <Name>foregrounds\9-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-6.xnb</Output>
+      <Time>2012-01-16T09:49:00.5824827-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\9-7.png</Source>
+      <Name>foregrounds\9-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\9-7.xnb</Output>
+      <Time>2012-01-16T13:40:37.7221519-05:00</Time>
+    </Item>
+    <Item>
+      <Source>backdrops\lab.png</Source>
+      <Name>backdrops\lab</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\backdrops\lab.xnb</Output>
+      <Time>2012-01-17T18:09:23.4060745-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\8-7.png</Source>
+      <Name>foregrounds\8-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\8-7.xnb</Output>
+      <Time>2012-01-17T20:06:16.1688289-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-6.png</Source>
+      <Name>foregrounds\6-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-6.xnb</Output>
+      <Time>2012-01-17T21:00:14.8206718-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-7.png</Source>
+      <Name>foregrounds\7-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-7.xnb</Output>
+      <Time>2012-01-18T17:35:23.0708047-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\plasma ball 1.png</Source>
+      <Name>objects\plasma ball 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\plasma ball 1.xnb</Output>
+      <Time>2012-01-18T22:13:37.0680978-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\plasma ball 2.png</Source>
+      <Name>objects\plasma ball 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\plasma ball 2.xnb</Output>
+      <Time>2012-01-18T22:14:34.7183952-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\plasma ball 3.png</Source>
+      <Name>objects\plasma ball 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\plasma ball 3.xnb</Output>
+      <Time>2012-01-18T22:15:12.8695773-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-8.png</Source>
+      <Name>foregrounds\7-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-8.xnb</Output>
+      <Time>2012-01-19T17:24:42.5948131-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-7.png</Source>
+      <Name>foregrounds\6-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-7.xnb</Output>
+      <Time>2012-01-20T15:02:02.6033541-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-8.png</Source>
+      <Name>foregrounds\6-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-8.xnb</Output>
+      <Time>2012-01-20T17:16:06.040385-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\5-7.png</Source>
+      <Name>foregrounds\5-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\5-7.xnb</Output>
+      <Time>2012-01-22T09:35:06.5848336-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\5-6.png</Source>
+      <Name>foregrounds\5-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\5-6.xnb</Output>
+      <Time>2012-01-21T13:17:48.218028-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\5-8.png</Source>
+      <Name>foregrounds\5-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\5-8.xnb</Output>
+      <Time>2012-01-21T15:52:53.2387935-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\launcher.png</Source>
+      <Name>objects\launcher</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\launcher.xnb</Output>
+      <Time>2012-01-21T17:12:39.9167742-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\rocket.png</Source>
+      <Name>objects\rocket</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\rocket.xnb</Output>
+      <Time>2012-01-21T17:11:07.3574801-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-6.png</Source>
+      <Name>foregrounds\4-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-6.xnb</Output>
+      <Time>2012-01-21T22:39:18.4305289-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-7.png</Source>
+      <Name>foregrounds\4-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-7.xnb</Output>
+      <Time>2012-01-22T09:12:55.9682265-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-8.png</Source>
+      <Name>foregrounds\4-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-8.xnb</Output>
+      <Time>2012-01-22T09:46:05.4299927-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-1.png</Source>
+      <Name>foregrounds\6-1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-1.xnb</Output>
+      <Time>2012-01-22T18:42:48.5434948-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\5-1.png</Source>
+      <Name>foregrounds\5-1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\5-1.xnb</Output>
+      <Time>2012-01-22T20:53:23.947391-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\5-2.png</Source>
+      <Name>foregrounds\5-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\5-2.xnb</Output>
+      <Time>2012-01-22T20:44:55.1002866-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\5-3.png</Source>
+      <Name>foregrounds\5-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\5-3.xnb</Output>
+      <Time>2012-01-24T21:16:46.389259-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-3.png</Source>
+      <Name>foregrounds\4-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-3.xnb</Output>
+      <Time>2012-01-28T18:36:29.6918969-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\3-3.png</Source>
+      <Name>foregrounds\3-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\3-3.xnb</Output>
+      <Time>2012-01-28T20:42:26.9099695-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-3.png</Source>
+      <Name>foregrounds\2-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-3.xnb</Output>
+      <Time>2012-01-28T21:47:02.4437868-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-4.png</Source>
+      <Name>foregrounds\2-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-4.xnb</Output>
+      <Time>2012-01-29T09:28:34.4163352-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\3-4.png</Source>
+      <Name>foregrounds\3-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\3-4.xnb</Output>
+      <Time>2012-01-29T10:08:59.384215-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\3-5.png</Source>
+      <Name>foregrounds\3-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\3-5.xnb</Output>
+      <Time>2012-01-29T12:23:24.6296053-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-5.png</Source>
+      <Name>foregrounds\4-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-5.xnb</Output>
+      <Time>2012-01-29T19:57:59.9880865-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-5.png</Source>
+      <Name>foregrounds\2-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-5.xnb</Output>
+      <Time>2012-01-29T21:45:21.6292977-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\1-5.png</Source>
+      <Name>foregrounds\1-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\1-5.xnb</Output>
+      <Time>2012-01-29T22:06:50.325639-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\1-6.png</Source>
+      <Name>foregrounds\1-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\1-6.xnb</Output>
+      <Time>2012-02-04T11:19:08.8626988-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-6.png</Source>
+      <Name>foregrounds\2-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-6.xnb</Output>
+      <Time>2012-01-30T15:18:35.6146702-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\3-6.png</Source>
+      <Name>foregrounds\3-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\3-6.xnb</Output>
+      <Time>2012-01-30T15:27:22.8898896-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\starfish.png</Source>
+      <Name>objects\starfish</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\starfish.xnb</Output>
+      <Time>2012-01-30T15:56:34.4399323-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\1-7.png</Source>
+      <Name>foregrounds\1-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\1-7.xnb</Output>
+      <Time>2012-01-31T15:06:37.3235025-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-7.png</Source>
+      <Name>foregrounds\2-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-7.xnb</Output>
+      <Time>2012-01-31T15:34:33.8825578-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-8.png</Source>
+      <Name>foregrounds\2-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-8.xnb</Output>
+      <Time>2012-01-31T16:35:48.7951166-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\1-8.png</Source>
+      <Name>foregrounds\1-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\1-8.xnb</Output>
+      <Time>2012-01-31T19:03:15.4475666-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\1-9.png</Source>
+      <Name>foregrounds\1-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\1-9.xnb</Output>
+      <Time>2012-02-01T16:22:42.0931117-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\0-9.png</Source>
+      <Name>foregrounds\0-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\0-9.xnb</Output>
+      <Time>2012-02-01T21:15:25.1499856-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-9.png</Source>
+      <Name>foregrounds\2-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-9.xnb</Output>
+      <Time>2012-02-02T17:53:28.5088206-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-10.png</Source>
+      <Name>foregrounds\2-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-10.xnb</Output>
+      <Time>2012-02-04T10:18:39.943545-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\1-10.png</Source>
+      <Name>foregrounds\1-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\1-10.xnb</Output>
+      <Time>2012-02-03T16:31:01.8101297-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\0-10.png</Source>
+      <Name>foregrounds\0-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\0-10.xnb</Output>
+      <Time>2012-02-03T16:06:47.0487182-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\3-10.png</Source>
+      <Name>foregrounds\3-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\3-10.xnb</Output>
+      <Time>2012-02-04T10:19:05.7258373-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\3-9.png</Source>
+      <Name>foregrounds\3-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\3-9.xnb</Output>
+      <Time>2012-02-04T10:36:27.6298846-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-9.png</Source>
+      <Name>foregrounds\4-9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-9.xnb</Output>
+      <Time>2012-02-04T10:45:37.3921955-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-10.png</Source>
+      <Name>foregrounds\4-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-10.xnb</Output>
+      <Time>2012-02-04T10:55:27.4687012-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\fish 1.png</Source>
+      <Name>objects\fish 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\fish 1.xnb</Output>
+      <Time>2012-02-04T19:44:54.6946472-05:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\fish 2.png</Source>
+      <Name>objects\fish 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\objects\fish 2.xnb</Output>
+      <Time>2012-02-04T19:44:40.4808342-05:00</Time>
+    </Item>
+    <Item>
+      <Source>backdrops\final.jpg</Source>
+      <Name>backdrops\final</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\backdrops\final.xnb</Output>
+      <Time>2012-02-08T15:04:10.5593667-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\0-11.png</Source>
+      <Name>foregrounds\0-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\0-11.xnb</Output>
+      <Time>2012-02-06T15:10:32.7744299-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\1-11.png</Source>
+      <Name>foregrounds\1-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\1-11.xnb</Output>
+      <Time>2012-02-06T15:57:18.3710024-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\2-11.png</Source>
+      <Name>foregrounds\2-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\2-11.xnb</Output>
+      <Time>2012-02-10T20:01:13.321842-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\4-11.png</Source>
+      <Name>foregrounds\4-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\4-11.xnb</Output>
+      <Time>2012-02-10T20:22:00.9911233-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\3-11.png</Source>
+      <Name>foregrounds\3-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\3-11.xnb</Output>
+      <Time>2012-02-10T20:13:46.3498314-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\5-11.png</Source>
+      <Name>foregrounds\5-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\5-11.xnb</Output>
+      <Time>2012-02-11T14:02:07.0955187-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\6-11.png</Source>
+      <Name>foregrounds\6-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\6-11.xnb</Output>
+      <Time>2012-02-11T11:39:02.7933864-05:00</Time>
+    </Item>
+    <Item>
+      <Source>thump.wav</Source>
+      <Name>thump</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\thump.xnb</Output>
+      <Time>2012-02-04T20:15:28.8227382-05:00</Time>
+    </Item>
+    <Item>
+      <Source>whoosh.wav</Source>
+      <Name>whoosh</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\whoosh.xnb</Output>
+      <Time>2012-01-02T14:13:59.0844033-05:00</Time>
+    </Item>
+    <Item>
+      <Source>meow.wav</Source>
+      <Name>meow</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\meow.xnb</Output>
+      <Time>2012-01-02T14:34:23.0522217-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ticking.wav</Source>
+      <Name>ticking</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\ticking.xnb</Output>
+      <Time>2012-02-03T17:21:36.5112537-05:00</Time>
+    </Item>
+    <Item>
+      <Source>explosion.wav</Source>
+      <Name>explosion</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\explosion.xnb</Output>
+      <Time>2012-02-04T18:27:07.1366119-05:00</Time>
+    </Item>
+    <Item>
+      <Source>rocket launch.wav</Source>
+      <Name>rocket launch</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\rocket launch.xnb</Output>
+      <Time>2012-02-04T18:30:02.45192-05:00</Time>
+    </Item>
+    <Item>
+      <Source>get gem.wav</Source>
+      <Name>get gem</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\get gem.xnb</Output>
+      <Time>2012-02-04T18:49:15.3456089-05:00</Time>
+    </Item>
+    <Item>
+      <Source>dead.wav</Source>
+      <Name>dead</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\dead.xnb</Output>
+      <Time>2012-02-05T17:25:33.4661991-05:00</Time>
+    </Item>
+    <Item>
+      <Source>font.spritefont</Source>
+      <Name>font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\font.xnb</Output>
+      <Time>2012-01-02T11:05:26.6291139-05:00</Time>
+    </Item>
+    <Item>
+      <Source>canyonmus.mp3</Source>
+      <Name>canyonmus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\canyonmus.xnb</Output>
+      <Extra>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\canyonmus.wma</Extra>
+      <Time>2012-01-14T20:35:42.610933-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cavemus.mp3</Source>
+      <Name>cavemus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cavemus.xnb</Output>
+      <Extra>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\cavemus.wma</Extra>
+      <Time>2012-01-15T21:21:45.8875982-05:00</Time>
+    </Item>
+    <Item>
+      <Source>labmus.mp3</Source>
+      <Name>labmus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\labmus.xnb</Output>
+      <Extra>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\labmus.wma</Extra>
+      <Time>2012-01-18T18:33:02.7683502-05:00</Time>
+    </Item>
+    <Item>
+      <Source>watermus.mp3</Source>
+      <Name>watermus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\watermus.xnb</Output>
+      <Extra>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\watermus.wma</Extra>
+      <Time>2012-01-29T20:49:09.3153929-05:00</Time>
+    </Item>
+    <Item>
+      <Source>warmus.mp3</Source>
+      <Name>warmus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\warmus.xnb</Output>
+      <Extra>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\warmus.wma</Extra>
+      <Time>2012-01-29T20:45:27.2528685-05:00</Time>
+    </Item>
+    <Item>
+      <Source>finalmus.mp3</Source>
+      <Name>finalmus</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\finalmus.xnb</Output>
+      <Extra>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\finalmus.wma</Extra>
+      <Time>2012-02-05T21:56:18.5849474-05:00</Time>
+    </Item>
+    <Item>
+      <Source>easter egg.wmv</Source>
+      <Name>easter egg</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\easter egg.xnb</Output>
+      <Extra>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\easter egg.wmv</Extra>
+      <Time>2012-01-14T22:45:36.7903469-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-11.png</Source>
+      <Name>foregrounds\7-11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-11.xnb</Output>
+      <Time>2012-02-12T13:18:37.5403171-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\7-10.png</Source>
+      <Name>foregrounds\7-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\7-10.xnb</Output>
+      <Time>2012-02-12T13:36:41.4926874-05:00</Time>
+    </Item>
+    <Item>
+      <Source>foregrounds\8-10.png</Source>
+      <Name>foregrounds\8-10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\foregrounds\8-10.xnb</Output>
+      <Time>2012-02-12T17:14:18.0944604-05:00</Time>
+    </Item>
+    <Item>
+      <Source>credits.wav</Source>
+      <Name>credits</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\credits.xnb</Output>
+      <Time>2012-02-15T17:28:00.5358718-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Tad\Desktop\Documents\Visual Studio 2010\Projects\Cat Planet 2\Cat Planet 2\Cat Planet 2\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-12-25T17:39:42.9320882-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

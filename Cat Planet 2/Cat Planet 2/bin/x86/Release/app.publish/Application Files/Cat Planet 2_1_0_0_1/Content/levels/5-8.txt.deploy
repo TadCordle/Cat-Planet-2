@@ -1,0 +1,13 @@
+lab
+restart 2 4 8 58 407 6 8 855 407
+wall -20 -9 137 341
+wall -20 455 137 288
+wall 844 -9 137 341
+wall 837 455 143 276
+fence 88 3 780 32 yellow 0
+fence 88 685 780 32 yellow 1
+fence 263 174 32 544 red 2
+fence 459 3 32 544 red 3
+fence 650 174 32 544 red 4
+link -75 -34 34 798 4 8 1 0
+link 997 -41 34 798 6 8 1 0

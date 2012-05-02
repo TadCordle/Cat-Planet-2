@@ -1,0 +1,10 @@
+warzone
+restart 1 10 0 480 480
+wall 0 0 32 720
+wall 0 0 960 32
+wall 0 696 960 32
+wall 928 0 32 720
+fish 100 100
+fish 200 200
+fish 800 100
+fish 700 200

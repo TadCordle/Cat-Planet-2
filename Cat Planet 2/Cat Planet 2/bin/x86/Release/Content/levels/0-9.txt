@@ -1,0 +1,10 @@
+underwater
+restart 1 1 9 859 247
+wall -17 23 66 686
+wall -17 -28 996 63
+wall -18 636 988 91
+wall 290 300 682 91
+bubbles 295 35 467 259 -6 0
+bubbles 55 35 233 359 0 6
+bubbles 54 398 919 232 6 0
+link 995 0 33 695 1 9 1 0

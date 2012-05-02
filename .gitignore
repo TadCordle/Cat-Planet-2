@@ -1,7 +1,6 @@
-bin/
-obj/
 *.suo
 *.user
 *.fla
 *.vsp
 *.psess
+cp2\ setup.zip

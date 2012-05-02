@@ -1,0 +1,17 @@
+final
+restart 2 6 11 50 634 7 10 192 33
+wall -14 -6 185 455
+wall -15 682 182 74
+wall 394 682 586 74
+wall 615 421 83 83
+wall 922 242 59 455
+wall 394 -6 586 253
+obstaclewall 121 225 303 22
+obstaclewall 147 448 20 238
+obstaclewall 131 757 303 22
+deathwall 175 689 213 22
+rock 288 -87 0 2
+fish 773 324
+cat 758 650 66
+link -66 436 33 250 6 11 1 0
+link 161 -57 252 22 7 10 0 1

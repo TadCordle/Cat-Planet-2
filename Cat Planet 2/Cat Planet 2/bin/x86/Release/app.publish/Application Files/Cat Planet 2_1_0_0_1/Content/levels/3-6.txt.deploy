@@ -1,0 +1,12 @@
+warzone
+restart 1 2 6 83 486
+wall -19 -20 172 208
+wall -19 534 169 195
+wall 97 -20 876 132
+wall 97 597 856 132
+wall 854 77 118 587
+launcher 795 172
+launcher 795 541
+gem 774 340 2
+cat 341 563 48
+link -71 74 33 568 2 6 1 0

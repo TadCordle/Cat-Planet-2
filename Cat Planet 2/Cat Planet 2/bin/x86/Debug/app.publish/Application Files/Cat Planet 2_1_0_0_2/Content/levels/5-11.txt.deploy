@@ -1,0 +1,21 @@
+final
+restart 2 4 11 39 618 6 11 835 135
+wall -20 445 160 74
+wall -26 666 731 74
+wall 666 -30 305 74
+wall 670 186 303 116
+wall 303 531 48 140
+deathwall 155 347 20 149
+deathwall 185 327 240 25
+deathwall 461 437 22 74
+deathwall 491 527 61 45
+deathwall 550 404 25 125
+deathwall 516 296 35 91
+deathwall 485 41 63 247
+deathwall 524 37 143 44
+deathwall 639 190 33 105
+deathwall 666 294 30 150
+deathwall 684 445 24 215
+deathwall 269 532 27 131
+link -67 497 33 220 4 11 1 0
+link 993 0 33 206 6 11 1 0

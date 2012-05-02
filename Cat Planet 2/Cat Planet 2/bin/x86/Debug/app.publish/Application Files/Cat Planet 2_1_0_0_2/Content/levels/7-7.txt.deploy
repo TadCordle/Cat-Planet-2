@@ -1,0 +1,24 @@
+lab
+restart 3 6 7 24 446 7 8 473 595 8 7 888 444
+wall -12 41 119 246
+wall -12 494 119 178
+wall 82 643 285 88
+wall 87 5 832 68
+wall 333 396 87 336
+wall 572 396 87 336
+wall 625 643 285 88
+wall 883 494 93 178
+wall 888 63 86 201
+button 203 588 lime 0
+timer 193 446 0 400 0
+fence 390 506 209 32 lime 0
+button 760 588 cyan 1
+timer 755 440 1 400 0
+fence 390 454 209 32 cyan 1
+timer 478 185 2 70 1
+timer -100 -100 3 70 1
+fence 363 45 32 381 yellow 2
+fence 600 45 32 381 yellow 3
+link -75 -34 34 798 6 7 1 0
+link 199 753 493 23 7 8 0 1
+link 994 47 31 582 8 7 1 0
